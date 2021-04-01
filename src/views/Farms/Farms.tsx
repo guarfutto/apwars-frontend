@@ -57,13 +57,13 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
     (farm) => farm.userData && new BigNumber(farm.userData.stakedBalance).isGreaterThan(0),
   )
 
-  const humansFarms = activeFarms.filter(
-    (farm) => farm.team === 1,
-  )
+  const humansFarms = activeFarms.filter((farm) => farm.team === 1)
 
-  const orcsFarms = activeFarms.filter(
-    (farm) => farm.team === 2,
-  )
+  const orcsFarms = activeFarms.filter((farm) => farm.team === 2)
+
+  const humansInactiveFarms = inactiveFarms.filter((farm) => farm.team === 1)
+
+  const orcsInactiveFarms = inactiveFarms.filter((farm) => farm.team === 2)
 
   // /!\ This function will be removed soon
   // This function compute the APY for each farm and will be replaced when we have a reliable API
@@ -135,6 +135,12 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Route>
           <Route exact path={`${path}/team/2`}>
             {farmsList(orcsFarms, false)}
+          </Route>
+          <Route exact path={`${path}/team/1/history`}>
+            {farmsList(humansInactiveFarms, false)}
+          </Route>
+          <Route exact path={`${path}/team/2/history`}>
+            {farmsList(orcsInactiveFarms, false)}
           </Route>
         </FlexLayout>
       </div>

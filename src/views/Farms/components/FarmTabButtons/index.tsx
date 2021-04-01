@@ -5,18 +5,24 @@ import { ButtonMenu, ButtonMenuItem, Text, Toggle } from '@pancakeswap-libs/uiki
 import useI18n from 'hooks/useI18n'
 
 const FarmTabButtons = ({ stakedOnly, setStakedOnly }) => {
-  const { url, isExact } = useRouteMatch()
+  const { url } = useRouteMatch()
   const TranslateString = useI18n()
 
-  const isActive = window.location.pathname.search('history');
+  const isActive = window.location.pathname.search('history') === -1
 
-  const isShowTeam = window.location.pathname.search('/tier/0') === -1;
-  let team = 0;
+  const isShowTeam = window.location.pathname.search('/tier/0') === -1
+  let team = 0
   if (window.location.pathname.search('/team/1') > 0) {
     team = 1
   }
   if (window.location.pathname.search('/team/2') > 0) {
     team = 2
+  }
+  let urlHistory = 'history'
+  let urlActive = url
+  if (team > 0) {
+    urlHistory = `team/${team}/history`
+    urlActive += `/team/${team}`
   }
 
   return (
@@ -25,16 +31,16 @@ const FarmTabButtons = ({ stakedOnly, setStakedOnly }) => {
         <Toggle checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} />
         <Text> {TranslateString(699, 'Staked only')}</Text>
       </ToggleWrapper>
-      <ButtonMenu activeIndex={isActive === -1 ? 0 : 1} size="sm" variant="subtle">
-        <ButtonMenuItem as={Link} to={`${url}`}>
+      <ButtonMenu activeIndex={isActive ? 0 : 1} size="sm" variant="subtle">
+        <ButtonMenuItem as={Link} to={`${urlActive}`}>
           {TranslateString(698, 'Active')}
         </ButtonMenuItem>
-        <ButtonMenuItem as={Link} to={`${url}/history`}>
+        <ButtonMenuItem as={Link} to={`${url}/${urlHistory}`}>
           {TranslateString(700, 'Inactive')}
         </ButtonMenuItem>
       </ButtonMenu>
-      {
-        isShowTeam && (
+      {isShowTeam && isActive && (
+        <div style={{ marginLeft: '20px' }}>
           <ButtonMenu activeIndex={team} size="sm" variant="subtle">
             <ButtonMenuItem as={Link} to={`${url}`}>
               {TranslateString(698, 'All')}
@@ -46,9 +52,24 @@ const FarmTabButtons = ({ stakedOnly, setStakedOnly }) => {
               {TranslateString(700, 'Orcs')}
             </ButtonMenuItem>
           </ButtonMenu>
-        )
-      }
+        </div>
+      )}
 
+      {isShowTeam && !isActive && (
+        <div style={{ marginLeft: '20px' }}>
+          <ButtonMenu activeIndex={team} size="sm" variant="subtle">
+            <ButtonMenuItem as={Link} to={`${url}/history`}>
+              {TranslateString(698, 'All')}
+            </ButtonMenuItem>
+            <ButtonMenuItem as={Link} to={`${url}/team/1/history`}>
+              {TranslateString(700, 'Humans')}
+            </ButtonMenuItem>
+            <ButtonMenuItem as={Link} to={`${url}/team/2/history`}>
+              {TranslateString(700, 'Orcs')}
+            </ButtonMenuItem>
+          </ButtonMenu>
+        </div>
+      )}
     </Wrapper>
   )
 }
