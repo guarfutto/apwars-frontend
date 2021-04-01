@@ -41,8 +41,6 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
   const [stakedOnly, setStakedOnly] = useState(false)
 
-  const [teamSelect, setTeamSelect] = useState('All')
-
   const activeFarms = farmsLP.filter((farm) => {
     const isActive = !!farm.isTokenOnly === !!tokenMode && farm.multiplier !== '0X'
 
@@ -57,6 +55,14 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
   const stakedOnlyFarms = activeFarms.filter(
     (farm) => farm.userData && new BigNumber(farm.userData.stakedBalance).isGreaterThan(0),
+  )
+
+  const humansFarms = activeFarms.filter(
+    (farm) => farm.team === 1,
+  )
+
+  const orcsFarms = activeFarms.filter(
+    (farm) => farm.team === 2,
   )
 
   // /!\ This function will be removed soon
@@ -114,7 +120,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
         {TranslateString(10000, 'Deposit Fee will be used to buyback EGG')}
       </Heading>
-      <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} setTeamSelect={setTeamSelect} />
+      <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>
         <Divider />
         <FlexLayout>
@@ -123,6 +129,12 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Route>
           <Route exact path={`${path}/history`}>
             {farmsList(inactiveFarms, true)}
+          </Route>
+          <Route exact path={`${path}/team/1`}>
+            {farmsList(humansFarms, false)}
+          </Route>
+          <Route exact path={`${path}/team/2`}>
+            {farmsList(orcsFarms, false)}
           </Route>
         </FlexLayout>
       </div>
