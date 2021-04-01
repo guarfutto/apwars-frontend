@@ -42,6 +42,8 @@ export interface Address {
 export interface FarmConfig {
   pid: number
   internalPID: number
+  team: number // (0 no team, 1 - humans, 2 - orcs)
+  tier: number
   lpSymbol: string
   farmManager: string
   lpAddresses: Address

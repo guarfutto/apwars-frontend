@@ -24,6 +24,24 @@ const config: MenuEntry[] = [
     label: 'Farms',
     icon: 'FarmIcon',
     href: '/farms',
+    items: [
+      {
+        label: 'Gold Mine',
+        href: '/farms/tier/0',
+      },
+      {
+        label: 'Barracks',
+        href: '/farms/tier/1',
+      },
+      {
+        label: 'Armory',
+        href: '/farms/tier/2',
+      },
+      {
+        label: 'Arcane Library',
+        href: '/farms/tier/3',
+      },
+    ],
   },
   {
     label: 'Nests',

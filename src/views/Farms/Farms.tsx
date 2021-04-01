@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useState } from 'react'
-import { Route, useRouteMatch } from 'react-router-dom'
+import { Route, useRouteMatch, useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import BigNumber from 'bignumber.js'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
@@ -23,6 +23,7 @@ export interface FarmsProps {
 
 const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const { path } = useRouteMatch()
+  const { tierId } = useParams<{ tierId: string }>()
   const TranslateString = useI18n()
   const farmsLP = useFarms()
   const cakePrice = usePriceCakeBusd()
@@ -40,8 +41,19 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
   const [stakedOnly, setStakedOnly] = useState(false)
 
-  const activeFarms = farmsLP.filter((farm) => !!farm.isTokenOnly === !!tokenMode && farm.multiplier !== '0X')
-  const inactiveFarms = farmsLP.filter((farm) => !!farm.isTokenOnly === !!tokenMode && farm.multiplier === '0X')
+  const [teamSelect, setTeamSelect] = useState('All')
+
+  const activeFarms = farmsLP.filter((farm) => {
+    const isActive = !!farm.isTokenOnly === !!tokenMode && farm.multiplier !== '0X'
+
+    return isActive && farm.tier === parseInt(tierId)
+  })
+
+  const inactiveFarms = farmsLP.filter((farm) => {
+    const isInactive = !!farm.isTokenOnly === !!tokenMode && farm.multiplier === '0X'
+
+    return isInactive && farm.tier === parseInt(tierId)
+  })
 
   const stakedOnlyFarms = activeFarms.filter(
     (farm) => farm.userData && new BigNumber(farm.userData.stakedBalance).isGreaterThan(0),
@@ -76,6 +88,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
 
         return { ...farm, apy }
       })
+
       return farmsToDisplayWithAPY.map((farm) => (
         <FarmCard
           key={farm.pid}
@@ -101,7 +114,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
         {TranslateString(10000, 'Deposit Fee will be used to buyback EGG')}
       </Heading>
-      <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
+      <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} setTeamSelect={setTeamSelect} />
       <div>
         <Divider />
         <FlexLayout>
