@@ -58,11 +58,8 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   )
 
   const humansFarms = activeFarms.filter((farm) => farm.team === 1)
-
   const orcsFarms = activeFarms.filter((farm) => farm.team === 2)
-
   const humansInactiveFarms = inactiveFarms.filter((farm) => farm.team === 1)
-
   const orcsInactiveFarms = inactiveFarms.filter((farm) => farm.team === 2)
 
   // /!\ This function will be removed soon
@@ -144,7 +141,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Route>
         </FlexLayout>
       </div>
-      <Image src="/images/egg/8.png" alt="illustration" width={1352} height={587} responsive />
+      <Image src="/images/goldchest.png" alt="illustration" width={1352} height={587} responsive />
     </Page>
   )
 }

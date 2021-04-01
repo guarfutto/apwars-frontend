@@ -1208,6 +1208,24 @@
     },
     {
       "data": {
+        "stringId": 729,
+        "text": "All"
+      }
+    },
+    {
+      "data": {
+        "stringId": 730,
+        "text": "Humans"
+      }
+    },
+    {
+      "data": {
+        "stringId": 731,
+        "text": "Orcs"
+      }
+    },
+    {
+      "data": {
         "stringId": 10000,
         "text": "Deposit Fee will be used to buyback EGG"
       }

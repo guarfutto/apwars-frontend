@@ -43,13 +43,13 @@ const FarmTabButtons = ({ stakedOnly, setStakedOnly }) => {
         <div style={{ marginLeft: '20px' }}>
           <ButtonMenu activeIndex={team} size="sm" variant="subtle">
             <ButtonMenuItem as={Link} to={`${url}`}>
-              {TranslateString(698, 'All')}
+              {TranslateString(729, 'All')}
             </ButtonMenuItem>
             <ButtonMenuItem as={Link} to={`${url}/team/1`}>
-              {TranslateString(700, 'Humans')}
+              {TranslateString(730, 'Humans')}
             </ButtonMenuItem>
             <ButtonMenuItem as={Link} to={`${url}/team/2`}>
-              {TranslateString(700, 'Orcs')}
+              {TranslateString(731, 'Orcs')}
             </ButtonMenuItem>
           </ButtonMenu>
         </div>
@@ -59,13 +59,13 @@ const FarmTabButtons = ({ stakedOnly, setStakedOnly }) => {
         <div style={{ marginLeft: '20px' }}>
           <ButtonMenu activeIndex={team} size="sm" variant="subtle">
             <ButtonMenuItem as={Link} to={`${url}/history`}>
-              {TranslateString(698, 'All')}
+              {TranslateString(729, 'All')}
             </ButtonMenuItem>
             <ButtonMenuItem as={Link} to={`${url}/team/1/history`}>
-              {TranslateString(700, 'Humans')}
+              {TranslateString(730, 'Humans')}
             </ButtonMenuItem>
             <ButtonMenuItem as={Link} to={`${url}/team/2/history`}>
-              {TranslateString(700, 'Orcs')}
+              {TranslateString(731, 'Orcs')}
             </ButtonMenuItem>
           </ButtonMenu>
         </div>
