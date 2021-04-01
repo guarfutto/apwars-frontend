@@ -57,13 +57,9 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
     (farm) => farm.userData && new BigNumber(farm.userData.stakedBalance).isGreaterThan(0),
   )
 
-  const humansFarms = activeFarms.filter(
-    (farm) => farm.team === 1,
-  )
+  const humansFarms = activeFarms.filter((farm) => farm.team === 1)
 
-  const orcsFarms = activeFarms.filter(
-    (farm) => farm.team === 2,
-  )
+  const orcsFarms = activeFarms.filter((farm) => farm.team === 2)
 
   // /!\ This function will be removed soon
   // This function compute the APY for each farm and will be replaced when we have a reliable API
@@ -138,7 +134,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Route>
         </FlexLayout>
       </div>
-      <Image src="/images/egg/8.png" alt="illustration" width={1352} height={587} responsive />
+      <Image src="/images/goldchest.png" alt="illustration" width={1352} height={587} responsive />
     </Page>
   )
 }

@@ -8,10 +8,10 @@ const FarmTabButtons = ({ stakedOnly, setStakedOnly }) => {
   const { url, isExact } = useRouteMatch()
   const TranslateString = useI18n()
 
-  const isActive = window.location.pathname.search('history');
+  const isActive = window.location.pathname.search('history')
 
-  const isShowTeam = window.location.pathname.search('/tier/0') === -1;
-  let team = 0;
+  const isShowTeam = window.location.pathname.search('/tier/0') === -1
+  let team = 0
   if (window.location.pathname.search('/team/1') > 0) {
     team = 1
   }
@@ -33,22 +33,19 @@ const FarmTabButtons = ({ stakedOnly, setStakedOnly }) => {
           {TranslateString(700, 'Inactive')}
         </ButtonMenuItem>
       </ButtonMenu>
-      {
-        isShowTeam && (
-          <ButtonMenu activeIndex={team} size="sm" variant="subtle">
-            <ButtonMenuItem as={Link} to={`${url}`}>
-              {TranslateString(698, 'All')}
-            </ButtonMenuItem>
-            <ButtonMenuItem as={Link} to={`${url}/team/1`}>
-              {TranslateString(700, 'Humans')}
-            </ButtonMenuItem>
-            <ButtonMenuItem as={Link} to={`${url}/team/2`}>
-              {TranslateString(700, 'Orcs')}
-            </ButtonMenuItem>
-          </ButtonMenu>
-        )
-      }
-
+      {isShowTeam && (
+        <ButtonMenu activeIndex={team} size="sm" variant="subtle">
+          <ButtonMenuItem as={Link} to={`${url}`}>
+            {TranslateString(698, 'All')}
+          </ButtonMenuItem>
+          <ButtonMenuItem as={Link} to={`${url}/team/1`}>
+            {TranslateString(700, 'Humans')}
+          </ButtonMenuItem>
+          <ButtonMenuItem as={Link} to={`${url}/team/2`}>
+            {TranslateString(700, 'Orcs')}
+          </ButtonMenuItem>
+        </ButtonMenu>
+      )}
     </Wrapper>
   )
 }
