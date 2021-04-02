@@ -28,7 +28,7 @@ interface FarmCardActionsProps {
 const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }) => {
   const TranslateString = useI18n()
   const [requestedApproval, setRequestedApproval] = useState(false)
-  const { pid, internalPID, lpAddresses, farmManager, tokenAddresses, isTokenOnly, depositFeeBP } = useFarmFromPid(
+  const { pid, rewardTip, internalPID, lpAddresses, farmManager, tokenAddresses, isTokenOnly, depositFeeBP } = useFarmFromPid(
     farm.pid,
   )
   const { allowance, tokenBalance, stakedBalance, earnings } = useFarmUser(pid)
@@ -77,8 +77,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }
     <Action>
       <Flex>
         <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="3px">
-          {/* TODO: Is there a way to get a dynamic value here from useFarmFromSymbol? */}
-          GOLD
+          {rewardTip}
         </Text>
         <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
           {TranslateString(999, 'Earned')}

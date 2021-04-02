@@ -64,7 +64,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const orcsInactiveFarms = inactiveFarms.filter((farm) => farm.team === 2)
   const stakedHumansFarms = stakedOnlyFarms.filter((farm) => farm.team === 1)
   const stakedOrcsFarms = stakedOnlyFarms.filter((farm) => farm.team === 2)
- 
+
   // /!\ This function will be removed soon
   // This function compute the APY for each farm and will be replaced when we have a reliable API
   // to retrieve assets prices against USD
@@ -145,14 +145,9 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         </FlexLayout>
       </div>
 
-      {isActive && (
-        <Image src="/images/goldchest.png" alt="illustration" width={1352} height={587} responsive />
-      )}
+      {isActive && <Image src="/images/goldchest.png" alt="illustration" width={1352} height={587} responsive />}
 
-      {!isActive && (
-        <Image src="/images/goldchest_close.png" alt="illustration" width={1352} height={587} responsive />
-      )}
-
+      {!isActive && <Image src="/images/goldchest_close.png" alt="illustration" width={1352} height={587} responsive />}
     </Page>
   )
 }
