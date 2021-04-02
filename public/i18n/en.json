@@ -645,7 +645,7 @@
     {
       "data": {
         "stringId": 534,
-        "text": "warGOLD Stats"
+        "text": "wGOLD Stats"
       }
     },
     {
@@ -675,19 +675,19 @@
     {
       "data": {
         "stringId": 544,
-        "text": "warGOLD to Harvest"
+        "text": "wGOLD to Harvest"
       }
     },
     {
       "data": {
         "stringId": 546,
-        "text": "warGOLD in Wallet"
+        "text": "wGOLD in Wallet"
       }
     },
     {
       "data": {
         "stringId": 548,
-        "text": "Collecting warGOLD"
+        "text": "Collecting wGOLD"
       }
     },
     {
@@ -699,7 +699,7 @@
     {
       "data": {
         "stringId": 552,
-        "text": "warGOLD to Collect"
+        "text": "wGOLD to Collect"
       }
     },
     {
@@ -765,7 +765,7 @@
     {
       "data": {
         "stringId": 580,
-        "text": "Stake warGOLD to earn new tokens."
+        "text": "Stake wGOLD to earn new tokens."
       }
     },
     {
