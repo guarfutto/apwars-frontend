@@ -31,4 +31,20 @@ export default {
     56: '0xEedbED4971DCe09D692759390Ed787213Db49e95',
     97: '',
   },
+  warARMOREDGRUNT: {
+    56: '0xD814E6cd12EcaC6EC6F2c92f5F64880E17249D13',
+    97: '',
+  },
+  warCROSSBOWMAN: {
+    56: '0xA39a3F890FE83a9c9AFA24086F9c799A0af5B472',
+    97: '',
+  },
+  warARMOREDWARRIOR: {
+    56: '0xe21F6053dfeECcd8DaB90DFbF109CB6fe7D1BaCb',
+    97: '',
+  },
+  warPIKEORC: {
+    56: '0x4225bc869f2Abe70D822ed61b92dB9a21ce8Dae2',
+    97: '',
+  }
 }

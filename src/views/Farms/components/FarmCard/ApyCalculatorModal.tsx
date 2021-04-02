@@ -10,7 +10,7 @@ import { Address } from 'config/constants/types'
 interface ApyCalculatorModalProps {
   onDismiss?: () => void
   lpLabel?: string
-  cakePrice?: BigNumber
+  tokenPrice?: BigNumber
   apy?: BigNumber
   quoteTokenAdresses?: Address
   quoteTokenSymbol?: string
@@ -39,18 +39,18 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
   quoteTokenAdresses,
   quoteTokenSymbol,
   tokenAddresses,
-  cakePrice,
+  tokenPrice,
   apy,
 }) => {
   const TranslateString = useI18n()
   const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAdresses, quoteTokenSymbol, tokenAddresses })
   const farmApy = apy.times(new BigNumber(100)).toNumber()
-  const oneThousandDollarsWorthOfCake = 1000 / cakePrice.toNumber()
+  const oneThousandDollarsWorthOfCake = 1000 / tokenPrice.toNumber()
 
-  const cakeEarnedPerThousand1D = calculateCakeEarnedPerThousandDollars({ numberOfDays: 1, farmApy, cakePrice })
-  const cakeEarnedPerThousand7D = calculateCakeEarnedPerThousandDollars({ numberOfDays: 7, farmApy, cakePrice })
-  const cakeEarnedPerThousand30D = calculateCakeEarnedPerThousandDollars({ numberOfDays: 30, farmApy, cakePrice })
-  const cakeEarnedPerThousand365D = calculateCakeEarnedPerThousandDollars({ numberOfDays: 365, farmApy, cakePrice })
+  const cakeEarnedPerThousand1D = calculateCakeEarnedPerThousandDollars({ numberOfDays: 1, farmApy, tokenPrice })
+  const cakeEarnedPerThousand7D = calculateCakeEarnedPerThousandDollars({ numberOfDays: 7, farmApy, tokenPrice })
+  const cakeEarnedPerThousand30D = calculateCakeEarnedPerThousandDollars({ numberOfDays: 30, farmApy, tokenPrice })
+  const cakeEarnedPerThousand365D = calculateCakeEarnedPerThousandDollars({ numberOfDays: 365, farmApy, tokenPrice })
 
   return (
     <Modal title="ROI" onDismiss={onDismiss}>

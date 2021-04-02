@@ -9,7 +9,7 @@ import useFarmsWithBalance from 'hooks/useFarmsWithBalance'
 import UnlockButton from 'components/UnlockButton'
 import CakeHarvestBalance from './CakeHarvestBalance'
 import CakeWalletBalance from './CakeWalletBalance'
-import { usePriceCakeBusd } from '../../../state/hooks'
+import { useTokenBUSDPrice } from '../../../state/hooks'
 import useTokenBalance from '../../../hooks/useTokenBalance'
 import { getCakeAddress } from '../../../utils/addressHelpers'
 import useAllEarnings from '../../../hooks/useAllEarnings'
@@ -45,7 +45,7 @@ const FarmedStakingCard = () => {
   const TranslateString = useI18n()
   const farmsWithBalance = useFarmsWithBalance()
   const cakeBalance = getBalanceNumber(useTokenBalance(getCakeAddress()))
-  const eggPrice = usePriceCakeBusd().toNumber()
+  const tokenPrice = useTokenBUSDPrice().toNumber()
   const allEarnings = useAllEarnings()
   const earningsSum = allEarnings.reduce((accum, earning) => {
     return accum + new BigNumber(earning).div(new BigNumber(10).pow(18)).toNumber()
@@ -75,12 +75,12 @@ const FarmedStakingCard = () => {
         <Block>
           <Label>{TranslateString(544, 'EGG to Harvest')}</Label>
           <CakeHarvestBalance earningsSum={earningsSum} />
-          <Label>~${(eggPrice * earningsSum).toFixed(2)}</Label>
+          <Label>~${(tokenPrice * earningsSum).toFixed(2)}</Label>
         </Block>
         <Block>
           <Label>{TranslateString(546, 'EGG in Wallet')}</Label>
           <CakeWalletBalance cakeBalance={cakeBalance} />
-          <Label>~${(eggPrice * cakeBalance).toFixed(2)}</Label>
+          <Label>~${(tokenPrice * cakeBalance).toFixed(2)}</Label>
         </Block>
         <Actions>
           {account ? (

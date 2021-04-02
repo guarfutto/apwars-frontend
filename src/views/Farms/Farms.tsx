@@ -8,7 +8,7 @@ import { Image, Heading } from '@pancakeswap-libs/uikit'
 import { BLOCKS_PER_YEAR, CAKE_PER_BLOCK, CAKE_POOL_PID } from 'config'
 import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
-import { useFarms, usePriceBnbBusd, usePriceCakeBusd } from 'state/hooks'
+import { useFarms, usePriceBnbBusd, useTokenBUSDPrice } from 'state/hooks'
 import useRefresh from 'hooks/useRefresh'
 import { fetchFarmUserDataAsync } from 'state/actions'
 import { QuoteToken } from 'config/constants/types'
@@ -26,7 +26,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const { tierId } = useParams<{ tierId: string }>()
   const TranslateString = useI18n()
   const farmsLP = useFarms()
-  const cakePrice = usePriceCakeBusd()
+  const tokenPrice = useTokenBUSDPrice()
   const bnbPrice = usePriceBnbBusd()
   const { account, ethereum }: { account: string; ethereum: provider } = useWallet()
   const { tokenMode } = farmsProps
@@ -70,17 +70,17 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   // to retrieve assets prices against USD
   const farmsList = useCallback(
     (farmsToDisplay, removed: boolean) => {
-      // const cakePriceVsBNB = new BigNumber(farmsLP.find((farm) => farm.pid === CAKE_POOL_PID)?.tokenPriceVsQuote || 0)
+      // const tokenPriceVsBNB = new BigNumber(farmsLP.find((farm) => farm.pid === CAKE_POOL_PID)?.tokenPriceVsQuote || 0)
       const farmsToDisplayWithAPY: FarmWithStakedValue[] = farmsToDisplay.map((farm) => {
         // if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
         //   return farm
         // }
-        const cakeRewardPerBlock = new BigNumber(farm.tokenPerBlock || 1)
+        const tokenRewardPerBlock = new BigNumber(farm.tokenPerBlock || 1)
           .times(new BigNumber(farm.poolWeight))
           .div(new BigNumber(10).pow(18))
-        const cakeRewardPerYear = cakeRewardPerBlock.times(BLOCKS_PER_YEAR)
+        const tokenRewardPerYear = tokenRewardPerBlock.times(BLOCKS_PER_YEAR)
 
-        let apy = cakePrice.times(cakeRewardPerYear)
+        let apy = tokenPrice.times(tokenRewardPerYear)
 
         let totalValue = new BigNumber(farm.lpTotalInQuoteToken || 0)
 
@@ -101,24 +101,22 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           farm={farm}
           removed={removed}
           bnbPrice={bnbPrice}
-          cakePrice={cakePrice}
+          tokenPrice={tokenPrice}
           ethereum={ethereum}
           account={account}
         />
       ))
     },
-    [bnbPrice, account, cakePrice, ethereum],
+    [bnbPrice, account, tokenPrice, ethereum],
   )
 
   return (
     <Page>
       <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
-        {tokenMode
-          ? TranslateString(10002, 'Stake tokens to earn EGG')
-          : TranslateString(320, 'Stake LP tokens to earn EGG')}
+        {TranslateString(10002, 'Stake tokens and LP tokens to earn war tokens')}
       </Heading>
       <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
-        {TranslateString(10000, 'Deposit Fee will be used to buyback EGG')}
+        {TranslateString(10000, 'Deposit Fee will be used to buyback warGOLD')}
       </Heading>
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>

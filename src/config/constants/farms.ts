@@ -43,8 +43,8 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0xEedbED4971DCe09D692759390Ed787213Db49e95',
     },
-    quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd,
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAdresses: contracts.wbnb,
   },
   {
     pid: 2,
@@ -248,13 +248,10 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0xDE458019B2Eb1ca36806cF5f3Dd74f5d95C3A470',
     },
-    tokenSymbol: 'warWIZARD',
-    tokenAddresses: {
-      97: '',
-      56: '0xa03776574F51d6565e63b807AE924A647A116635',
-    },
-    quoteTokenSymbol: QuoteToken.warGOLD,
-    quoteTokenAdresses: contracts.warGOLD,
+    tokenSymbol: QuoteToken.warARMOREDWARRIOR,
+    tokenAddresses: contracts.warARMOREDWARRIOR,
+    quoteTokenSymbol: QuoteToken.warCROSSBOWMAN,
+    quoteTokenAdresses: contracts.warCROSSBOWMAN,
   },
   {
     pid: 12,
@@ -269,13 +266,10 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0x572fce3F47a99F269bb7225CE7d9fcEBAeA8c64f',
     },
-    tokenSymbol: 'warSHAMAN',
-    tokenAddresses: {
-      97: '',
-      56: '0xb5C3C13844D3a6a105eAfd5462D98B4a0bD3a29E',
-    },
-    quoteTokenSymbol: QuoteToken.warGOLD,
-    quoteTokenAdresses: contracts.warGOLD,
+    tokenSymbol: QuoteToken.warPIKEORC,
+    tokenAddresses: contracts.warPIKEORC,
+    quoteTokenSymbol: QuoteToken.warARMOREDGRUNT,
+    quoteTokenAdresses: contracts.warARMOREDGRUNT,
   },
 
   // {

@@ -84,13 +84,13 @@ const ExpandingWrapper = styled.div<{ expanded: boolean }>`
 interface FarmCardProps {
   farm: FarmWithStakedValue
   removed: boolean
-  cakePrice?: BigNumber
+  tokenPrice?: BigNumber
   bnbPrice?: BigNumber
   ethereum?: provider
   account?: string
 }
 
-const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice, ethereum, account }) => {
+const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, tokenPrice, bnbPrice, ethereum, account }) => {
   const TranslateString = useI18n()
 
   const [showExpandableSection, setShowExpandableSection] = useState(false)
@@ -112,13 +112,13 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
       return bnbPrice.times(farm.lpTotalInQuoteToken)
     }
     if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
-      return cakePrice.times(farm.lpTotalInQuoteToken)
+      return tokenPrice.times(farm.lpTotalInQuoteToken)
     }
     return farm.lpTotalInQuoteToken
-  }, [bnbPrice, cakePrice, farm.lpTotalInQuoteToken, farm.quoteTokenSymbol])
+  }, [bnbPrice, tokenPrice, farm.lpTotalInQuoteToken, farm.quoteTokenSymbol])
 
   const totalValueFormated = totalValue
-    ? `$${Number(totalValue).toLocaleString(undefined, { maximumFractionDigits: 0 })}`
+    ? `$${Number(totalValue).toLocaleString(undefined, { maximumFractionDigits: 5 })}`
     : '-'
 
   const lpLabel = farm.lpSymbol
@@ -154,7 +154,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
                   quoteTokenAdresses={quoteTokenAdresses}
                   quoteTokenSymbol={quoteTokenSymbol}
                   tokenAddresses={tokenAddresses}
-                  cakePrice={cakePrice}
+                  tokenPrice={tokenPrice}
                   apy={farm.apy}
                 />
                 {farmAPY}%

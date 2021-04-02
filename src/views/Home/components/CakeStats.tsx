@@ -7,7 +7,7 @@ import { useTotalSupply, useBurnedBalance } from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
 import { getCakeAddress } from 'utils/addressHelpers'
 import CardValue from './CardValue'
-import { useFarms, usePriceCakeBusd } from '../../../state/hooks'
+import { useFarms, useTokenBUSDPrice } from '../../../state/hooks'
 
 const StyledCakeStats = styled(Card)`
   margin-left: auto;
@@ -27,10 +27,10 @@ const CakeStats = () => {
   const totalSupply = useTotalSupply()
   const burnedBalance = useBurnedBalance(getCakeAddress())
   const farms = useFarms()
-  const eggPrice = usePriceCakeBusd()
+  const tokenPrice = useTokenBUSDPrice()
   const circSupply = totalSupply ? totalSupply.minus(burnedBalance) : new BigNumber(0)
   const cakeSupply = getBalanceNumber(circSupply)
-  const marketCap = eggPrice.times(circSupply)
+  const marketCap = tokenPrice.times(circSupply)
 
   let tokenPerBlock = 0
   if (farms && farms[0] && farms[0].tokenPerBlock) {
