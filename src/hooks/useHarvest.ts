@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { fetchFarmUserDataAsync, updateUserBalance, updateUserPendingReward } from 'state/actions'
 import { soushHarvest, soushHarvestBnb, harvest } from 'utils/callHelpers'
 import { useMasterchef, useSousChef } from './useContract'
+import { getDefaultFarmManagerAddress } from '../utils/addressHelpers'
 
 export const useHarvest = (farmPid: number, farmManager: string) => {
   const dispatch = useDispatch()
@@ -21,7 +22,7 @@ export const useHarvest = (farmPid: number, farmManager: string) => {
 
 export const useAllHarvest = (farmPids: number[]) => {
   const { account } = useWallet()
-  const masterChefContract = useMasterchef('')
+  const masterChefContract = useMasterchef(getDefaultFarmManagerAddress())
 
   const handleHarvest = useCallback(async () => {
     const harvestPromises = farmPids.reduce((accum, pid) => {

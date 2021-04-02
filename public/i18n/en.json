@@ -675,19 +675,19 @@
     {
       "data": {
         "stringId": 544,
-        "text": "EGG to Harvest"
+        "text": "warGOLD to Harvest"
       }
     },
     {
       "data": {
         "stringId": 546,
-        "text": "EGG in Wallet"
+        "text": "warGOLD in Wallet"
       }
     },
     {
       "data": {
         "stringId": 548,
-        "text": "Collecting EGG"
+        "text": "Collecting warGOLD"
       }
     },
     {
@@ -699,7 +699,7 @@
     {
       "data": {
         "stringId": 552,
-        "text": "EGG to Collect"
+        "text": "warGOLD to Collect"
       }
     },
     {

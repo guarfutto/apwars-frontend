@@ -46,5 +46,5 @@ export default {
   warPIKEORC: {
     56: '0x4225bc869f2Abe70D822ed61b92dB9a21ce8Dae2',
     97: '',
-  }
+  },
 }
