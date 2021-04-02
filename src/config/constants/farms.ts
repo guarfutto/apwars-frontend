@@ -11,7 +11,7 @@ const farms: FarmConfig[] = [
     team: 0,
     tier: 0,
     risk: 5,
-    lpSymbol: 'warGOLD-BUSD LP',
+    lpSymbol: 'warGOLD - BUSD LP',
     lpAddresses: {
       97: '',
       56: '0x404aa3ad24ac6ebdaed864d79618ea51f9b23514',
@@ -71,12 +71,12 @@ const farms: FarmConfig[] = [
     team: 1,
     tier: 1,
     risk: 3,
-    lpSymbol: 'warWarrior-warGOLD LP',
+    lpSymbol: 'warWARRIOR - warGOLD LP',
     lpAddresses: {
       97: '',
       56: '0xf8f1b1c3fec08c5d5c717a07f47af96d6bcb42af',
     },
-    tokenSymbol: 'warWarrior',
+    tokenSymbol: 'warWARRIOR',
     tokenAddresses: {
       97: '',
       56: '0x2e900F47550DdC631385fF834EcfCB3BB65966b3',
@@ -91,12 +91,12 @@ const farms: FarmConfig[] = [
     team: 1,
     tier: 1,
     risk: 3,
-    lpSymbol: 'warArcher-warGOLD LP',
+    lpSymbol: 'warARCHER - warGOLD LP',
     lpAddresses: {
       97: '',
       56: '0x3A4663Fdb2a4cd2Ac8660F4ccF6218739401628c',
     },
-    tokenSymbol: 'warArcher',
+    tokenSymbol: 'warARCHER',
     tokenAddresses: {
       97: '',
       56: '0xcf6359EeE8e18C78aE1B074c5eFaF20Bd4b0fec4',
@@ -111,7 +111,7 @@ const farms: FarmConfig[] = [
     team: 2,
     tier: 1,
     risk: 3,
-    lpSymbol: 'warGRUNT-warGOLD LP',
+    lpSymbol: 'warGRUNT - warGOLD LP',
     lpAddresses: {
       97: '',
       56: '0x486d649A19b6De99B304983C9b5dd454787949D7',
@@ -131,7 +131,7 @@ const farms: FarmConfig[] = [
     team: 2,
     tier: 1,
     risk: 3,
-    lpSymbol: 'warORC-ARCHER-warGOLD LP',
+    lpSymbol: 'warORC-ARCHER - warGOLD LP',
     lpAddresses: {
       97: '',
       56: '0x992883155213219B4C1a6620aaD52e51d9fF2A42',
@@ -151,12 +151,12 @@ const farms: FarmConfig[] = [
     team: 1,
     tier: 2,
     risk: 3,
-    lpSymbol: 'warArmored Warrior-warGOLD LP',
+    lpSymbol: 'warARMORED-WARRIOR - warGOLD LP',
     lpAddresses: {
       97: '',
       56: '0x5ec767EE269B34399a41642DDE6B4c46B03380Bc',
     },
-    tokenSymbol: 'warArmored-Warrior',
+    tokenSymbol: 'warARMORED-WARRIOR',
     tokenAddresses: {
       97: '',
       56: '0xe21F6053dfeECcd8DaB90DFbF109CB6fe7D1BaCb',
@@ -171,12 +171,12 @@ const farms: FarmConfig[] = [
     team: 1,
     tier: 2,
     risk: 3,
-    lpSymbol: 'warCrossbowman-warGOLD LP',
+    lpSymbol: 'warCROSSBOWMAN - warGOLD LP',
     lpAddresses: {
       97: '',
       56: '0xd7e9256f525ebc370283127e304a465640f70776',
     },
-    tokenSymbol: 'warCrossbowman',
+    tokenSymbol: 'warCROSSBOWMAN',
     tokenAddresses: {
       97: '',
       56: '0xA39a3F890FE83a9c9AFA24086F9c799A0af5B472',
@@ -191,7 +191,7 @@ const farms: FarmConfig[] = [
     team: 2,
     tier: 2,
     risk: 3,
-    lpSymbol: 'warPIKE-ORC-warGOLD LP',
+    lpSymbol: 'warPIKE-ORC - warGOLD LP',
     lpAddresses: {
       97: '',
       56: '0xa456bbfbab9957f335d4f25b7a167e5074460ab5',
@@ -211,7 +211,7 @@ const farms: FarmConfig[] = [
     team: 2,
     tier: 2,
     risk: 3,
-    lpSymbol: 'warARMORED-GRUNT-warGOLD LP',
+    lpSymbol: 'warARMORED-GRUNT - warGOLD LP',
     lpAddresses: {
       97: '',
       56: '0xE009059b91fE2e36E2aD1CF33Da771b504ac956E',
@@ -231,18 +231,18 @@ const farms: FarmConfig[] = [
     team: 1,
     tier: 3,
     risk: 3,
-    lpSymbol: 'warArmored Warrior-warCrossbowman LP',
+    lpSymbol: 'warARMORED-WARRIOR - warCROSSBOWMAN LP',
     lpAddresses: {
       97: '',
       56: '0xDE458019B2Eb1ca36806cF5f3Dd74f5d95C3A470',
     },
-    tokenSymbol: 'warWizard',
+    tokenSymbol: 'warWIZARD',
     tokenAddresses: {
       97: '',
       56: '0xa03776574F51d6565e63b807AE924A647A116635',
     },
-    quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd,
+    quoteTokenSymbol: QuoteToken.warGOLD,
+    quoteTokenAdresses: contracts.warGOLD,
   },
   {
     pid: 12,
@@ -251,7 +251,7 @@ const farms: FarmConfig[] = [
     team: 2,
     tier: 3,
     risk: 3,
-    lpSymbol: 'warPIKE-ORC-warARMORED-GRUNT LP',
+    lpSymbol: 'warPIKE-ORC - warARMORED-GRUNT LP',
     lpAddresses: {
       97: '',
       56: '0x572fce3F47a99F269bb7225CE7d9fcEBAeA8c64f',
@@ -261,8 +261,8 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0xb5C3C13844D3a6a105eAfd5462D98B4a0bD3a29E',
     },
-    quoteTokenSymbol: QuoteToken.BUSD,
-    quoteTokenAdresses: contracts.busd,
+    quoteTokenSymbol: QuoteToken.warGOLD,
+    quoteTokenAdresses: contracts.warGOLD,
   },
 
   // {
