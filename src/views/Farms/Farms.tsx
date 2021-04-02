@@ -161,7 +161,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       </Heading>
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       {showContent()}
-      {tierId !== '0' && <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>Comming Soon</Heading>}
+      {tierId !== '0' && <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>Coming Soon</Heading>}
     </Page>
   )
 }
