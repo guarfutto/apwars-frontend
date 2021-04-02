@@ -13,11 +13,13 @@ const useAllEarnings = () => {
   useEffect(() => {
     const fetchAllBalances = async () => {
       // ONLY GOLD CAN BE SHOWED IN THE BALANCE
-      const calls = farmsConfig.filter(farmConfig => farmConfig.tier === 0).map((farm) => ({
-        address: farm.farmManager,
-        name: 'pendingTokens',
-        params: [farm.internalPID, account],
-      }))
+      const calls = farmsConfig
+        .filter((farmConfig) => farmConfig.tier === 0)
+        .map((farm) => ({
+          address: farm.farmManager,
+          name: 'pendingTokens',
+          params: [farm.internalPID, account],
+        }))
 
       const res = await multicall(masterChefABI, calls)
 

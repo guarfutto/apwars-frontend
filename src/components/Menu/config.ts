@@ -1,5 +1,5 @@
 import { MenuEntry } from '@pancakeswap-libs/uikit'
-import contracts from '../../config/constants/contracts';
+import contracts from '../../config/constants/contracts'
 
 const config: MenuEntry[] = [
   {
@@ -70,7 +70,7 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'PancakeSwap',
-        href: `https://pancakeswap.info/token/${contracts.cake[56]}`, 
+        href: `https://pancakeswap.info/token/${contracts.cake[56]}`,
       },
       // {
       //   label: 'CoinGecko',
@@ -114,7 +114,6 @@ const config: MenuEntry[] = [
     icon: 'AuditIcon',
     href: 'https://certik.org/projects/goose-finance',
   },
-  
 ]
 
 export default config
