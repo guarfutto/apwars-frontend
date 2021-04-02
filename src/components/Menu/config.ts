@@ -1,4 +1,5 @@
 import { MenuEntry } from '@pancakeswap-libs/uikit'
+import contracts from '../../config/constants/contracts';
 
 const config: MenuEntry[] = [
   {
@@ -43,11 +44,11 @@ const config: MenuEntry[] = [
       },
     ],
   },
-  {
-    label: 'Nests',
-    icon: 'PoolIcon',
-    href: '/nests',
-  },
+  // {
+  //   label: 'Nests',
+  //   icon: 'PoolIcon',
+  //   href: '/nests',
+  // },
   // {
   //   label: 'Pools',
   //   icon: 'PoolIcon',
@@ -69,19 +70,19 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'PancakeSwap',
-        href: 'https://pancakeswap.info/token/0xF952Fc3ca7325Cc27D15885d37117676d25BfdA6',
+        href: `https://pancakeswap.info/token/${contracts.cake[56]}`, 
       },
-      {
-        label: 'CoinGecko',
-        href: 'https://www.coingecko.com/en/coins/goose-finance',
-      },
-      {
-        label: 'CoinMarketCap',
-        href: 'https://coinmarketcap.com/currencies/goose-finance/',
-      },
+      // {
+      //   label: 'CoinGecko',
+      //   href: 'https://www.coingecko.com/en/coins/apwars',
+      // },
+      // {
+      //   label: 'CoinMarketCap',
+      //   href: 'https://coinmarketcap.com/currencies/apwars',
+      // },
       {
         label: 'AstroTools',
-        href: 'https://app.astrotools.io/pancake-pair-explorer/0x19e7cbecdd23a16dfa5573df54d98f7caae03019',
+        href: `https://app.astrotools.io/pancake-pair-explorer/${contracts.cake[56]}`,
       },
     ],
   },
@@ -91,34 +92,29 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Github',
-        href: 'https://github.com/goosedefi/',
+        href: 'https://github.com/apwars/',
       },
       {
         label: 'Docs',
-        href: 'https://goosedefi.gitbook.io/goose-finance/',
+        href: 'https://apwars.gitbook.io/wpars-finance/',
       },
       {
         label: 'Blog',
-        href: 'https://goosefinance.medium.com/',
+        href: 'https://apwars.medium.com/',
       },
     ],
   },
   {
-    label: 'Partnerships/IFO',
-    icon: 'GooseIcon',
-    href:
-      'https://docs.google.com/forms/d/e/1FAIpQLSe7ycrw8Dq4C5Vjc9WNlRtTxEhFDB1Ny6jlAByZ2Y6qBo7SKg/viewform?usp=sf_link',
-  },
-  {
-    label: 'Audit by Hacken',
+    label: 'Audit by Hacken (Goose Finance)',
     icon: 'AuditIcon',
     href: 'https://www.goosedefi.com/files/hackenAudit.pdf',
   },
   {
-    label: 'Audit by CertiK',
+    label: 'Audit by CertiK (Goose Finance)',
     icon: 'AuditIcon',
     href: 'https://certik.org/projects/goose-finance',
   },
+  
 ]
 
 export default config

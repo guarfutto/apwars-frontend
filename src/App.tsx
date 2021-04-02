@@ -48,9 +48,9 @@ const App: React.FC = () => {
             <Route path="/farms/tier/:tierId">
               <Farms />
             </Route>
-            <Route path="/nests">
+            {/* <Route path="/nests">
               <Farms tokenMode />
-            </Route>
+            </Route> */}
             {/* <Route path="/pools"> */}
             {/*  <Pools /> */}
             {/* </Route> */}
