@@ -75,12 +75,12 @@ const FarmedStakingCard = () => {
         </Heading>
         <CardImage src="/images/apwars/logo.png" alt="APR Logo" width={64} height={64} />
         <Block>
-          <Label>{TranslateString(544, 'warGOLD to Harvest')}</Label>
+          <Label>{TranslateString(544, 'wGOLD to Harvest')}</Label>
           <CakeHarvestBalance earningsSum={earningsSum} />
           <Label>~${(tokenPrice * earningsSum).toFixed(2)}</Label>
         </Block>
         <Block>
-          <Label>{TranslateString(546, 'warGOLD in Wallet')}</Label>
+          <Label>{TranslateString(546, 'wGOLD in Wallet')}</Label>
           <CakeWalletBalance tokenBalance={tokenBalance} />
           <Label>~${(tokenPrice * tokenBalance).toFixed(2)}</Label>
         </Block>
@@ -93,7 +93,7 @@ const FarmedStakingCard = () => {
               fullWidth
             >
               {pendingTx
-                ? TranslateString(548, 'Collecting warGOLD')
+                ? TranslateString(548, 'Collecting wGOLD')
                 : TranslateString(999, `Harvest all (${balancesWithValue.length})`)}
             </Button>
           ) : (
