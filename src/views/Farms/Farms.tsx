@@ -30,6 +30,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const bnbPrice = usePriceBnbBusd()
   const { account, ethereum }: { account: string; ethereum: provider } = useWallet()
   const { tokenMode } = farmsProps
+  const isActive = window.location.pathname.search('history') === -1
 
   const dispatch = useDispatch()
   const { fastRefresh } = useRefresh()
@@ -42,15 +43,15 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const [stakedOnly, setStakedOnly] = useState(false)
 
   const activeFarms = farmsLP.filter((farm) => {
-    const isActive = !!farm.isTokenOnly === !!tokenMode && farm.multiplier !== '0X'
+    const isActiveFarms = !!farm.isTokenOnly === !!tokenMode && farm.multiplier !== '0X'
 
-    return isActive && farm.tier === parseInt(tierId)
+    return isActiveFarms && farm.tier === parseInt(tierId)
   })
 
   const inactiveFarms = farmsLP.filter((farm) => {
-    const isInactive = !!farm.isTokenOnly === !!tokenMode && farm.multiplier === '0X'
+    const isInactiveFarms = !!farm.isTokenOnly === !!tokenMode && farm.multiplier === '0X'
 
-    return isInactive && farm.tier === parseInt(tierId)
+    return isInactiveFarms && farm.tier === parseInt(tierId)
   })
 
   const stakedOnlyFarms = activeFarms.filter(
@@ -61,7 +62,9 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const orcsFarms = activeFarms.filter((farm) => farm.team === 2)
   const humansInactiveFarms = inactiveFarms.filter((farm) => farm.team === 1)
   const orcsInactiveFarms = inactiveFarms.filter((farm) => farm.team === 2)
-
+  const stakedHumansFarms = stakedOnlyFarms.filter((farm) => farm.team === 1)
+  const stakedOrcsFarms = stakedOnlyFarms.filter((farm) => farm.team === 2)
+ 
   // /!\ This function will be removed soon
   // This function compute the APY for each farm and will be replaced when we have a reliable API
   // to retrieve assets prices against USD
@@ -128,10 +131,10 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
             {farmsList(inactiveFarms, true)}
           </Route>
           <Route exact path={`${path}/team/1`}>
-            {farmsList(humansFarms, false)}
+            {stakedOnly ? farmsList(stakedHumansFarms, false) : farmsList(humansFarms, false)}
           </Route>
           <Route exact path={`${path}/team/2`}>
-            {farmsList(orcsFarms, false)}
+            {stakedOnly ? farmsList(stakedOrcsFarms, false) : farmsList(orcsFarms, false)}
           </Route>
           <Route exact path={`${path}/team/1/history`}>
             {farmsList(humansInactiveFarms, false)}
@@ -141,7 +144,15 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Route>
         </FlexLayout>
       </div>
-      <Image src="/images/goldchest.png" alt="illustration" width={1352} height={587} responsive />
+
+      {isActive && (
+        <Image src="/images/goldchest.png" alt="illustration" width={1352} height={587} responsive />
+      )}
+
+      {!isActive && (
+        <Image src="/images/goldchest_close.png" alt="illustration" width={1352} height={587} responsive />
+      )}
+
     </Page>
   )
 }
