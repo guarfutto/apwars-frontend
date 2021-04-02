@@ -45,7 +45,7 @@ export interface FarmConfig {
   internalPID: number
   team: number // (0 no team, 1 - humans, 2 - orcs)
   tier: number
-  rewardTip: string,
+  rewardTip: string
   lpSymbol: string
   farmManager: string
   lpAddresses: Address
