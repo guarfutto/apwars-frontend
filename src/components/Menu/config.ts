@@ -1,6 +1,9 @@
 import { MenuEntry } from '@pancakeswap-libs/uikit'
 import contracts from '../../config/constants/contracts'
 
+const APWARS_URL_EXCHANGE = process.env.REACT_APP_APWARS_URL_EXCHANGE;
+
+
 const config: MenuEntry[] = [
   {
     label: 'Home',
@@ -13,11 +16,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://exchange.goosedefi.com/',
+        href: `${APWARS_URL_EXCHANGE}`,
       },
       {
         label: 'Liquidity',
-        href: 'https://exchange.goosedefi.com/#/pool',
+        href: `${APWARS_URL_EXCHANGE}#/pool`,
       },
     ],
   },
