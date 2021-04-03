@@ -14,7 +14,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'wGOLD - BUSD LP',
     lpAddresses: {
       97: '',
-      56: '0x404aa3ad24ac6ebdaed864d79618ea51f9b23514',
+      56: '0xab6ddad53513f9f0b57778a2ebf8aa81fbacc8c9',
     },
     tokenSymbol: 'wGOLD',
     tokenAddresses: {
@@ -35,7 +35,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'wGOLD-BNB LP',
     lpAddresses: {
       97: '',
-      56: '0x2fb09b7be893675cb60c1cbc7385500da7783b8e',
+      56: '0x2c48f43cd2f73324db4c32f05fd1bc38119e6e84',
     },
     tokenSymbol: 'wGOLD',
     tokenAddresses: {
@@ -119,7 +119,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'BUSD-DAI LP',
     lpAddresses: {
       97: '',
-      56: '0x680Dd100E4b394Bda26A59dD5c119A391e747d18',
+      56: '0x3aB77e40340AB084c3e23Be8e5A6f7afed9D41DC',
     },
     tokenSymbol: 'BUSD',
     tokenAddresses: {
