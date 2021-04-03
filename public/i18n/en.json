@@ -1227,7 +1227,7 @@
     {
       "data": {
         "stringId": 10000,
-        "text": "Deposit Fee will be used to buyback EGG"
+        "text": "Deposit Fee will be used to buyback wGOLD"
       }
     },
     {
@@ -1239,7 +1239,7 @@
     {
       "data": {
         "stringId": 10002,
-        "text": "Stake tokens to earn EGG"
+        "text": "Stake tokens to earn wGOLD"
       }
     },
     {
