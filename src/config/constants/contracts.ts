@@ -1,10 +1,10 @@
 export default {
   cake: {
-    56: '0xEedbED4971DCe09D692759390Ed787213Db49e95',
+    56: '0x7Ab6eedd9443e0e98E5Ea93667CA5B250b8ddA51',
     97: '',
   },
   masterChef: {
-    56: '0x6bAE99Aa8289B329bC426339cbbdc8E8384d132D',
+    56: '0x334b679ec7ed94fd03342ab842ff3190395ac53b',
     97: '',
   },
   wbnb: {
@@ -45,6 +45,14 @@ export default {
   },
   wPIKEORC: {
     56: '0x4225bc869f2Abe70D822ed61b92dB9a21ce8Dae2',
+    97: '',
+  },
+  usdc: {
+    56: '0x680Dd100E4b394Bda26A59dD5c119A391e747d18',
+    97: '',
+  },
+  dai: {
+    56: '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3',
     97: '',
   },
 }

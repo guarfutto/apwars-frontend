@@ -39,21 +39,21 @@ const FarmTabButtons = ({ stakedOnly, setStakedOnly }) => {
           {TranslateString(700, 'Inactive')}
         </ButtonMenuItem>
       </ButtonMenu>
-      {isShowTeam && isActive && (
+      {/* {isShowTeam && isActive && (
         <div style={{ marginLeft: '20px' }}>
           <ButtonMenu activeIndex={team} size="sm" variant="subtle">
             <ButtonMenuItem as={Link} to={`${url}`}>
               {TranslateString(729, 'All')}
             </ButtonMenuItem>
             <ButtonMenuItem as={Link} to={`${url}/team/1`}>
-              {TranslateString(730, 'Humans')}
+              {TranslateString(730, 'Corp')}
             </ButtonMenuItem>
             <ButtonMenuItem as={Link} to={`${url}/team/2`}>
-              {TranslateString(731, 'Orcs')}
+              {TranslateString(731, 'Degen')}
             </ButtonMenuItem>
           </ButtonMenu>
         </div>
-      )}
+      )} */}
 
       {isShowTeam && !isActive && (
         <div style={{ marginLeft: '20px' }}>
