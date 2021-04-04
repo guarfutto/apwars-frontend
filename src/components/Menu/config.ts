@@ -99,11 +99,11 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Docs',
-        href: 'https://apwars.gitbook.io/wpars-finance/',
+        href: 'https://docs.apwars.farm',
       },
       {
         label: 'Blog',
-        href: 'https://apwars.medium.com/',
+        href: 'https://medium.com/apwars',
       },
     ],
   },
