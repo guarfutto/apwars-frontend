@@ -46,6 +46,17 @@ const config: MenuEntry[] = [
       },
     ],
   },
+  {
+    label: 'Wars',
+    icon: 'FarmIcon',
+    href: '/wars',
+    items: [
+      {
+        label: 'Forces of Extreme Darkness',
+        href: '/wars/forces-of-extreme-darkness',
+      },
+    ],
+  },
   // {
   //   label: 'Nests',
   //   icon: 'PoolIcon',

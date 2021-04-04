@@ -18,6 +18,7 @@ const Farms = lazy(() => import('./views/Farms'))
 // const Ifos = lazy(() => import('./views/Ifos'))
 const NotFound = lazy(() => import('./views/NotFound'))
 // const Nft = lazy(() => import('./views/Nft'))
+const ForcesOfExtremeDarkness = lazy(() => import('./views/ForcesOfExtremeDarkness'))
 
 // This config is required for number formating
 BigNumber.config({
@@ -47,6 +48,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/farms/tier/:tierId">
               <Farms />
+            </Route>
+            <Route path="/wars/forces-of-extreme-darkness">
+              <ForcesOfExtremeDarkness />
             </Route>
             {/* <Route path="/nests">
               <Farms tokenMode />
