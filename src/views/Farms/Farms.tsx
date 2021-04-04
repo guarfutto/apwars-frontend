@@ -111,43 +111,47 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   )
 
   function showCards() {
-    return <div>
-      <Divider />
-      <FlexLayout>
-        <Route exact path={`${path}`}>
-          {stakedOnly ? farmsList(stakedOnlyFarms, false) : farmsList(activeFarms, false)}
-        </Route>
-        <Route exact path={`${path}/history`}>
-          {farmsList(inactiveFarms, true)}
-        </Route>
-        <Route exact path={`${path}/team/1`}>
-          {stakedOnly ? farmsList(stakedHumansFarms, false) : farmsList(humansFarms, false)}
-        </Route>
-        <Route exact path={`${path}/team/2`}>
-          {stakedOnly ? farmsList(stakedOrcsFarms, false) : farmsList(orcsFarms, false)}
-        </Route>
-        <Route exact path={`${path}/team/1/history`}>
-          {farmsList(humansInactiveFarms, false)}
-        </Route>
-        <Route exact path={`${path}/team/2/history`}>
-          {farmsList(orcsInactiveFarms, false)}
-        </Route>
-      </FlexLayout>
-      {isActive && <Image src="/images/goldchest.png" alt="illustration" width={1352} height={587} responsive />}
-      {!isActive && <Image src="/images/goldchest_close.png" alt="illustration" width={1352} height={587} responsive />}
-    </div>
+    return (
+      <div>
+        <Divider />
+        <FlexLayout>
+          <Route exact path={`${path}`}>
+            {stakedOnly ? farmsList(stakedOnlyFarms, false) : farmsList(activeFarms, false)}
+          </Route>
+          <Route exact path={`${path}/history`}>
+            {farmsList(inactiveFarms, true)}
+          </Route>
+          <Route exact path={`${path}/team/1`}>
+            {stakedOnly ? farmsList(stakedHumansFarms, false) : farmsList(humansFarms, false)}
+          </Route>
+          <Route exact path={`${path}/team/2`}>
+            {stakedOnly ? farmsList(stakedOrcsFarms, false) : farmsList(orcsFarms, false)}
+          </Route>
+          <Route exact path={`${path}/team/1/history`}>
+            {farmsList(humansInactiveFarms, false)}
+          </Route>
+          <Route exact path={`${path}/team/2/history`}>
+            {farmsList(orcsInactiveFarms, false)}
+          </Route>
+        </FlexLayout>
+        {isActive && <Image src="/images/goldchest.png" alt="illustration" width={1352} height={587} responsive />}
+        {!isActive && (
+          <Image src="/images/goldchest_close.png" alt="illustration" width={1352} height={587} responsive />
+        )}
+      </div>
+    )
   }
 
   function showContent() {
     switch (tierId) {
       case '1':
-        return <Image src="/images/apwars/barracks.png" alt="illustration" width={1352} height={587} responsive />;
+        return <Image src="/images/apwars/barracks.png" alt="illustration" width={1352} height={587} responsive />
       case '2':
         return <Image src="/images/apwars/armory.png" alt="illustration" width={1352} height={587} responsive />
       case '3':
         return <Image src="/images/apwars/arcane.png" alt="illustration" width={1352} height={587} responsive />
       default:
-        return showCards();
+        return showCards()
     }
   }
 
@@ -161,7 +165,11 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       </Heading>
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       {showContent()}
-      {tierId !== '0' && <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>Coming Soon</Heading>}
+      {tierId !== '0' && (
+        <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
+          Coming Soon
+        </Heading>
+      )}
     </Page>
   )
 }
