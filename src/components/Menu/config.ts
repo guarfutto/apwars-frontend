@@ -1,8 +1,7 @@
 import { MenuEntry } from '@pancakeswap-libs/uikit'
 import contracts from '../../config/constants/contracts'
 
-const APWARS_URL_EXCHANGE = process.env.REACT_APP_APWARS_URL_EXCHANGE;
-
+const APWARS_URL_EXCHANGE = process.env.REACT_APP_APWARS_URL_EXCHANGE
 
 const config: MenuEntry[] = [
   {
