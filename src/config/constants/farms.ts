@@ -14,12 +14,12 @@ const farms: FarmConfig[] = [
     lpSymbol: 'wGOLD - BUSD LP',
     lpAddresses: {
       97: '',
-      56: '0xab6ddad53513f9f0b57778a2ebf8aa81fbacc8c9',
+      56: '0xab6Ddad53513f9F0b57778A2ebf8aA81FBaCc8c9',
     },
     tokenSymbol: 'wGOLD',
     tokenAddresses: {
       97: '',
-      56: '0xEedbED4971DCe09D692759390Ed787213Db49e95',
+      56: '0x7ab6eedd9443e0e98e5ea93667ca5b250b8dda51',
     },
     quoteTokenSymbol: QuoteToken.BUSD,
     quoteTokenAdresses: contracts.busd,
@@ -40,7 +40,7 @@ const farms: FarmConfig[] = [
     tokenSymbol: 'wGOLD',
     tokenAddresses: {
       97: '',
-      56: '0xEedbED4971DCe09D692759390Ed787213Db49e95',
+      56: '0x7ab6eedd9443e0e98e5ea93667ca5b250b8dda51',
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,

@@ -1,6 +1,6 @@
 export default {
   cake: {
-    56: '0x7Ab6eedd9443e0e98E5Ea93667CA5B250b8ddA51',
+    56: '0x7ab6eedd9443e0e98e5ea93667ca5b250b8dda51',
     97: '',
   },
   masterChef: {
@@ -32,19 +32,19 @@ export default {
     97: '',
   },
   wARMOREDGRUNT: {
-    56: '0xD814E6cd12EcaC6EC6F2c92f5F64880E17249D13',
+    56: '',
     97: '',
   },
   wCROSSBOWMAN: {
-    56: '0xA39a3F890FE83a9c9AFA24086F9c799A0af5B472',
+    56: '',
     97: '',
   },
   wARMOREDWARRIOR: {
-    56: '0xe21F6053dfeECcd8DaB90DFbF109CB6fe7D1BaCb',
+    56: '',
     97: '',
   },
   wPIKEORC: {
-    56: '0x4225bc869f2Abe70D822ed61b92dB9a21ce8Dae2',
+    56: '',
     97: '',
   },
   usdc: {
