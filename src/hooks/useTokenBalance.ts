@@ -55,7 +55,6 @@ export const useBurnedBalance = (tokenAddress: string) => {
     const fetchBalance = async () => {
       try {
         const burnManagerContract = getContract(burnManager, getBurnManagerAddress())
-        console.log(burnManagerContract.methods.getBurnedAmount)
         const bal = await burnManagerContract.methods.getBurnedAmount(getCakeAddress()).call()
         setBalance(new BigNumber(bal))
       } catch (e) {

@@ -10,7 +10,7 @@ import { QuoteToken } from '../../config/constants/types'
 
 const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
 
-const fetchFarms = async () => {
+const fetchFarms = async (account:string) => {
   const data = await Promise.all(
     farmsConfig.map(async (farmConfig) => {
       const lpAdress = farmConfig.lpAddresses[CHAIN_ID]
@@ -115,16 +115,19 @@ const fetchFarms = async () => {
       ])
 
       if (farmConfig.farmManagerVersion) {
-        console.log('info.burnManager', farmConfig.farmManager, info.burnManager);
-        const [burnRate] = await multicall(burnManager, [
-          {
-            address: info.burnManager,
-            name: 'getBurnRate',
-            params: [farmConfig.farmManager, farmConfig.lpAddresses[CHAIN_ID], '0xd81FB06a1Bc3E0FEa3301880726Ec85806B08AB3', farmConfig.internalPID],
-          }
-        ])
-
-        depositFeeBP = burnRate;
+        if (account) {
+          const [burnRate] = await multicall(burnManager, [
+            {
+              address: info.burnManager,
+              name: 'getBurnRate',
+              params: [farmConfig.farmManager, farmConfig.lpAddresses[CHAIN_ID], account, farmConfig.internalPID],
+            }
+          ])
+        
+          depositFeeBP = burnRate;
+        } else {
+          depositFeeBP = 9900;
+        }
       } else {
         // eslint-disable-next-line prefer-destructuring
         depositFeeBP = info.depositFeeBP || 0;
