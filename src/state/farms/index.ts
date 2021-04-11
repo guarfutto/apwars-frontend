@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit'
+import { useWallet } from '@binance-chain/bsc-use-wallet'
 import farmsConfig from 'config/constants/farms'
 import fetchFarms from './fetchFarms'
 import {
@@ -37,8 +38,8 @@ export const farmsSlice = createSlice({
 export const { setFarmsPublicData, setFarmUserData } = farmsSlice.actions
 
 // Thunks
-export const fetchFarmsPublicDataAsync = () => async (dispatch) => {
-  const farms = await fetchFarms()
+export const fetchFarmsPublicDataAsync = (account:string) => async (dispatch) => {
+  const farms = await fetchFarms(account)
   dispatch(setFarmsPublicData(farms))
 }
 export const fetchFarmUserDataAsync = (account) => async (dispatch) => {

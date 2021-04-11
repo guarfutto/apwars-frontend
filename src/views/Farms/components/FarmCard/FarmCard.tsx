@@ -99,9 +99,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, tokenPrice, bnbPrice
   // We assume the token name is coin pair + lp e.g. CAKE-BNB LP, LINK-BNB LP,
   // NAR-CAKE LP. The images should be cake-bnb.svg, link-bnb.svg, nar-cake.svg
   // const farmImage = farm.lpSymbol.split(' ')[0].toLocaleLowerCase()
-  let farmImage = farm.isTokenOnly
-    ? farm.tokenSymbol.toLowerCase()
-    : `${farm.tokenSymbol.toLowerCase()}-${farm.quoteTokenSymbol.toLowerCase()}`
+  let farmImage = `${farm.tokenSymbol.toLowerCase()}-${farm.quoteTokenSymbol.toLowerCase()}`
   farmImage = farmImage.replace(/[:]/g, '')
 
   const totalValue: BigNumber = useMemo(() => {
@@ -122,7 +120,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, tokenPrice, bnbPrice
     : '-'
 
   const lpLabel = farm.lpSymbol
-  const earnLabel = 'wGOLD'
+  const earnLabel = farm.rewardTip
   const farmAPY =
     farm.apy &&
     farm.apy.times(new BigNumber(100)).toNumber().toLocaleString(undefined, {
@@ -170,7 +168,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, tokenPrice, bnbPrice
         <Text bold>{earnLabel}</Text>
       </Flex>
       <Flex justifyContent="space-between">
-        <Text style={{ fontSize: '24px' }}>{TranslateString(10001, 'Deposit Fee')}:</Text>
+        <Text style={{ fontSize: '24px' }}>{farm.tier === 0 ? TranslateString(10001, 'Deposit Fee') : 'Burning Rate'}:</Text>
         <Text bold style={{ fontSize: '24px' }}>
           {farm.depositFeeBP / 100}%
         </Text>
