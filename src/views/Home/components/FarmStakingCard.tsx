@@ -52,7 +52,9 @@ const FarmedStakingCard = () => {
   }, 0)
 
   // only gold can be showed in this card
-  const balancesWithValue = farmsWithBalance.filter((balanceType) => balanceType.tier === 0 && balanceType.balance.toNumber() > 0)
+  const balancesWithValue = farmsWithBalance.filter(
+    (balanceType) => balanceType.tier === 0 && balanceType.balance.toNumber() > 0,
+  )
 
   const { onReward } = useAllHarvest(balancesWithValue.map((farmWithBalance) => farmWithBalance.pid))
 

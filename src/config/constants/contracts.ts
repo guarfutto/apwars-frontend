@@ -52,7 +52,7 @@ export default {
     97: '',
   },
   usdc: {
-    56: '0x680Dd100E4b394Bda26A59dD5c119A391e747d18',
+    56: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
     97: '',
   },
   dai: {
