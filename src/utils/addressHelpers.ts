@@ -5,6 +5,9 @@ const chainId = process.env.REACT_APP_CHAIN_ID
 export const getCakeAddress = () => {
   return addresses.cake[chainId]
 }
+export const getBurnManagerAddress = () => {
+  return addresses.burnManager[chainId]
+}
 export const getDefaultFarmManagerAddress = () => {
   return addresses.masterChef[chainId]
 }

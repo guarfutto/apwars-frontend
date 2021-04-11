@@ -43,13 +43,13 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const [stakedOnly, setStakedOnly] = useState(false)
 
   const activeFarms = farmsLP.filter((farm) => {
-    const isActiveFarms = !!farm.isTokenOnly === !!tokenMode && farm.multiplier !== '0X'
+    const isActiveFarms = farm.multiplier !== '0X'
 
     return isActiveFarms && farm.tier === parseInt(tierId)
   })
 
   const inactiveFarms = farmsLP.filter((farm) => {
-    const isInactiveFarms = !!farm.isTokenOnly === !!tokenMode && farm.multiplier === '0X'
+    const isInactiveFarms = farm.multiplier === '0X'
 
     return isInactiveFarms && farm.tier === parseInt(tierId)
   })
@@ -75,12 +75,13 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         // if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
         //   return farm
         // }
+
         const tokenRewardPerBlock = new BigNumber(farm.tokenPerBlock || 1)
           .times(new BigNumber(farm.poolWeight))
           .div(new BigNumber(10).pow(18))
         const tokenRewardPerYear = tokenRewardPerBlock.times(BLOCKS_PER_YEAR)
 
-        let apy = tokenPrice.times(tokenRewardPerYear)
+        let apy = tokenPrice.times(tokenRewardPerYear);
 
         let totalValue = new BigNumber(farm.lpTotalInQuoteToken || 0)
 
@@ -133,15 +134,13 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           {farmsList(orcsInactiveFarms, false)}
         </Route>
       </FlexLayout>
-      {isActive && <Image src="/images/goldchest.png" alt="illustration" width={1352} height={587} responsive />}
-      {!isActive && <Image src="/images/goldchest_close.png" alt="illustration" width={1352} height={587} responsive />}
+      {isActive && tierId === '0' && <Image src="/images/goldchest.png" alt="illustration" width={1352} height={587} responsive />}
+      {!isActive && tierId === '0' && <Image src="/images/goldchest_close.png" alt="illustration" width={1352} height={587} responsive />}
     </div>
   }
 
   function showContent() {
     switch (tierId) {
-      case '1':
-        return <Image src="/images/apwars/barracks.png" alt="illustration" width={1352} height={587} responsive />;
       case '2':
         return <Image src="/images/apwars/armory.png" alt="illustration" width={1352} height={587} responsive />
       case '3':
@@ -159,9 +158,10 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
         {TranslateString(10000, 'Deposit Fee will be used to buyback wGOLD')}
       </Heading>
+      {tierId === '1' && <Image src="/images/apwars/barracks.png" alt="illustration" width={1352} height={587} responsive />}
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       {showContent()}
-      {tierId !== '0' && <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>Coming Soon</Heading>}
+      {parseInt(tierId) > 1 && <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>Coming Soon</Heading>}
     </Page>
   )
 }

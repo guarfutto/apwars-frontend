@@ -1,8 +1,7 @@
 import { MenuEntry } from '@pancakeswap-libs/uikit'
 import contracts from '../../config/constants/contracts'
 
-const APWARS_URL_EXCHANGE = process.env.REACT_APP_APWARS_URL_EXCHANGE;
-
+const APWARS_URL_EXCHANGE = process.env.REACT_APP_APWARS_URL_EXCHANGE
 
 const config: MenuEntry[] = [
   {
@@ -106,16 +105,6 @@ const config: MenuEntry[] = [
         href: 'https://medium.com/apwars',
       },
     ],
-  },
-  {
-    label: 'Audit by Hacken (Goose Finance)',
-    icon: 'AuditIcon',
-    href: 'https://www.goosedefi.com/files/hackenAudit.pdf',
-  },
-  {
-    label: 'Audit by CertiK (Goose Finance)',
-    icon: 'AuditIcon',
-    href: 'https://certik.org/projects/goose-finance',
   },
 ]
 

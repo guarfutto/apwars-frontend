@@ -7,6 +7,10 @@ export default {
     56: '0x334b679ec7ed94fd03342ab842ff3190395ac53b',
     97: '',
   },
+  burnManager: {
+    56: '0x3B1741EA141bC6EDd3C63fF629334a3304DFF35c',
+    97: '',
+  },
   wbnb: {
     56: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
     97: '',

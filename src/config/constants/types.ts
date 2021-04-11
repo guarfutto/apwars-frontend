@@ -54,6 +54,8 @@ export interface FarmConfig {
   rewardTip: string
   lpSymbol: string
   farmManager: string
+  farmManagerBaseTokenAddress?: string,
+  farmManagerVersion?: string,
   lpAddresses: Address
   tokenSymbol: string
   tokenAddresses: Address
