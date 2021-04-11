@@ -267,7 +267,7 @@ const farms: FarmConfig[] = [
     isTokenOnly: true,
     pid: 12,
     internalPID: 0,
-    farmManager: '0xE32f33e852Ff1Ab47806814Fe75B8a2e4BE31100',
+    farmManager: '0x10fddf14be3cf6e0e368ecf8d10a423895933c0d',
     farmManagerVersion: 'v2',
     rewardTip: 'wORC-ARCHER',
     team: 1,
