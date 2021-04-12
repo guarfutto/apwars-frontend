@@ -46,6 +46,11 @@ const config: MenuEntry[] = [
       },
     ],
   },
+  {
+    label: 'Buy game items!',
+    icon: 'NftIcon',
+    href: 'https://app.apwars.farm',
+  },
   // {
   //   label: 'Nests',
   //   icon: 'PoolIcon',
@@ -60,11 +65,6 @@ const config: MenuEntry[] = [
   //   label: 'Lottery',
   //   icon: 'TicketIcon',
   //   href: '/lottery',
-  // },
-  // {
-  //   label: 'NFT',
-  //   icon: 'NftIcon',
-  //   href: '/nft',
   // },
   {
     label: 'Info',

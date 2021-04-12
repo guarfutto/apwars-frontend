@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
 import React, { useCallback, useMemo, useState } from 'react'
-import { Button, Modal } from '@pancakeswap-libs/uikit'
+import { Button, Modal, Heading, Text } from '@pancakeswap-libs/uikit'
 import ModalActions from 'components/ModalActions'
 import TokenInput from 'components/TokenInput'
 import useI18n from 'hooks/useI18n'
@@ -34,6 +34,8 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
 
   return (
     <Modal title={`Withdraw ${tokenName}`} onDismiss={onDismiss}>
+      <Heading color="red">WARNING: When you unstake you stop to receive the rewards!</Heading>
+      <Text>Do you have any question? Feel free to ask!</Text>
       <TokenInput
         onSelectMax={handleSelectMax}
         onChange={handleChange}
