@@ -34,8 +34,8 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
 
   return (
     <Modal title={`Withdraw ${tokenName}`} onDismiss={onDismiss}>
-      <Heading color="red">WARNING: When you unstake you stop to receive the rewards!</Heading>
-      <Text>Do you have any question? Feel free to ask!</Text>
+      <Heading color="red">WARNING: If you unstake you will stop receiving rewards!</Heading>
+      <Text>If you have any questions feel free to ask!</Text>
       <TokenInput
         onSelectMax={handleSelectMax}
         onChange={handleChange}
