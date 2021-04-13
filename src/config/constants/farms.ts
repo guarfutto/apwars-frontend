@@ -47,7 +47,7 @@ const farms: FarmConfig[] = [
   },
   // Barracks
   {
-    pid: 9,
+    pid: 13,
     internalPID: 9,
     farmManager: '0x334b679ec7ed94fd03342ab842ff3190395ac53b',
     rewardTip: 'wGOLD',
