@@ -56,7 +56,7 @@ const FarmedStakingCard = () => {
     (balanceType) => balanceType.tier === 0 && balanceType.balance.toNumber() > 0,
   )
 
-  const { onReward } = useAllHarvest(balancesWithValue.map((farmWithBalance) => farmWithBalance.pid))
+  const { onReward } = useAllHarvest(balancesWithValue.map((farmWithBalance) => farmWithBalance.internalPID))
 
   const harvestAllFarms = useCallback(async () => {
     setPendingTx(true)
