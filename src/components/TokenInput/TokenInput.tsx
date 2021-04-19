@@ -39,7 +39,7 @@ const TokenInput: React.FC<TokenInputProps> = ({ isBurnRate, max, symbol, onChan
       {depositFeeBP > 0 ? (
         <div>
           <StyledMaxText>
-            {isBurnRate ? 'Burn Rate' : 'Deposit Fee'}: {new BigNumber(value || 0).times(depositFeeBP / 10000).toString()}{' '}
+            {isBurnRate ? 'Burning Fee' : 'Deposit Fee'}: {new BigNumber(value || 0).times(depositFeeBP / 10000).toString()}{' '}
             {symbol}
           </StyledMaxText>
           <StyledWarning>
