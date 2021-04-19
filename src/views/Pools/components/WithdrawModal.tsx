@@ -7,7 +7,7 @@ import useI18n from '../../../hooks/useI18n'
 import { getFullDisplayBalance } from '../../../utils/formatBalance'
 
 interface WithdrawModalProps {
-  isBurnRate: boolean,
+  isBurnRate: boolean
   max: BigNumber
   onConfirm: (amount: string) => void
   onDismiss?: () => void

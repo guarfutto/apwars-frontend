@@ -10,7 +10,7 @@ import { QuoteToken } from '../../config/constants/types'
 
 const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
 
-const fetchFarms = async (account:string) => {
+const fetchFarms = async (account: string) => {
   const data = await Promise.all(
     farmsConfig.map(async (farmConfig) => {
       const lpAdress = farmConfig.lpAddresses[CHAIN_ID]
@@ -93,12 +93,12 @@ const fetchFarms = async (account:string) => {
         }
       }
 
-      let [info, totalAllocPoint, tokenPerBlock] = [null, null, null];
-      let depositFeeBP = 0;
+      let [info, totalAllocPoint, tokenPerBlock] = [null, null, null]
+      let depositFeeBP = 0
 
-      const abi = farmConfig.farmManagerVersion ? unitFarmManager : masterchefABI;
-      
-      [info, totalAllocPoint, tokenPerBlock] = await multicall(abi, [
+      const abi = farmConfig.farmManagerVersion ? unitFarmManager : masterchefABI
+
+      ;[info, totalAllocPoint, tokenPerBlock] = await multicall(abi, [
         {
           address: farmConfig.farmManager,
           name: 'poolInfo',
@@ -121,23 +121,28 @@ const fetchFarms = async (account:string) => {
               address: info.burnManager,
               name: 'getBurnRate',
               params: [farmConfig.farmManager, farmConfig.lpAddresses[CHAIN_ID], account, farmConfig.internalPID],
-            }
+            },
           ])
-        
-          depositFeeBP = burnRate;
+
+          depositFeeBP = burnRate
         } else {
-          depositFeeBP = 9900;
+          depositFeeBP = 9900
         }
       } else {
         // eslint-disable-next-line prefer-destructuring
-        depositFeeBP = info.depositFeeBP || 0;
+        depositFeeBP = info.depositFeeBP || 0
       }
-      
+
       const allocPoint = new BigNumber(info.allocPoint._hex)
       const poolWeight = allocPoint.div(new BigNumber(totalAllocPoint))
 
       if (farmConfig.pid === 9) {
-        console.log({ pid: farmConfig.pid, allocPoint: allocPoint.toString(), poolWeight: poolWeight.toString(), totalAllocPoint: totalAllocPoint.toString() });
+        console.log({
+          pid: farmConfig.pid,
+          allocPoint: allocPoint.toString(),
+          poolWeight: poolWeight.toString(),
+          totalAllocPoint: totalAllocPoint.toString(),
+        })
       }
 
       return {
