@@ -81,6 +81,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   const convertedLimit = new BigNumber(stakingLimit).multipliedBy(new BigNumber(10).pow(tokenDecimals))
   const [onPresentDeposit] = useModal(
     <DepositModal
+      isBurnRate={false}
       max={stakingLimit && stakingTokenBalance.isGreaterThan(convertedLimit) ? convertedLimit : stakingTokenBalance}
       onConfirm={onStake}
       tokenName={stakingLimit ? `${stakingTokenName} (${stakingLimit} max)` : stakingTokenName}
@@ -92,7 +93,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   )
 
   const [onPresentWithdraw] = useModal(
-    <WithdrawModal max={stakedBalance} onConfirm={onUnstake} tokenName={stakingTokenName} />,
+    <WithdrawModal isBurnRate={false} max={stakedBalance} onConfirm={onUnstake} tokenName={stakingTokenName} />,
   )
 
   const handleApprove = useCallback(async () => {

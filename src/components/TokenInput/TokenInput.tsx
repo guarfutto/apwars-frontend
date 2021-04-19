@@ -6,13 +6,14 @@ import useI18n from '../../hooks/useI18n'
 import Input, { InputProps } from '../Input'
 
 interface TokenInputProps extends InputProps {
+  isBurnRate: boolean,
   max: number | string
   symbol: string
   onSelectMax?: () => void
   depositFeeBP?: number
 }
 
-const TokenInput: React.FC<TokenInputProps> = ({ max, symbol, onChange, onSelectMax, value, depositFeeBP = 0 }) => {
+const TokenInput: React.FC<TokenInputProps> = ({ isBurnRate, max, symbol, onChange, onSelectMax, value, depositFeeBP = 0 }) => {
   const TranslateString = useI18n()
   return (
     <StyledTokenInput>
@@ -36,10 +37,15 @@ const TokenInput: React.FC<TokenInputProps> = ({ max, symbol, onChange, onSelect
         value={value}
       />
       {depositFeeBP > 0 ? (
-        <StyledMaxText>
-          {TranslateString(10001, 'Deposit Fee')}: {new BigNumber(value || 0).times(depositFeeBP / 10000).toString()}{' '}
-          {symbol}
-        </StyledMaxText>
+        <div>
+          <StyledMaxText>
+            {isBurnRate ? 'Burn Rate' : 'Deposit Fee'}: {new BigNumber(value || 0).times(depositFeeBP / 10000).toString()}{' '}
+            {symbol}
+          </StyledMaxText>
+          <StyledWarning>
+            {isBurnRate ? `When you deposit in this pool, ${new BigNumber(value || 0).times(depositFeeBP / 10000).toFixed(2)} wGOLD of your precious pocket will be burned (destroyed) to build troops!` : null}
+          </StyledWarning>
+        </div>
       ) : null}
     </StyledTokenInput>
   )
@@ -58,11 +64,20 @@ const StyledTokenAdornmentWrapper = styled.div`
 
 const StyledMaxText = styled.div`
   align-items: center;
-  color: ${(props) => props.theme.colors.primary};
+  color: red;
   display: flex;
   font-size: 14px;
   font-weight: 700;
   height: 44px;
+  justify-content: flex-end;
+`
+
+const StyledWarning = styled.div`
+  align-items: center;
+  color: red;
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
   justify-content: flex-end;
 `
 
