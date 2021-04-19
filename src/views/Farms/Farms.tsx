@@ -155,11 +155,17 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
         {TranslateString(10002, 'Stake tokens and LP tokens to earn war tokens')}
       </Heading>
-      <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
+      {tierId === '0' &&
+        <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
         {TranslateString(10000, 'Deposit Fee will be used to buyback wGOLD')}
-      </Heading>
+        </Heading>}
       {tierId === '1' && <Image src="/images/apwars/barracks.png" alt="illustration" width={1352} height={587} responsive />}
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
+      {tierId !== '0' &&
+        <Heading as="h2" color="red" mb="50px" style={{ textAlign: 'center' }}>
+        {TranslateString(10000, 'Burning Rate is the percentage of wGOLD burned (destroyed) to build troops!')}
+        </Heading>}
+      
       {showContent()}
       {parseInt(tierId) > 1 && <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>Coming Soon</Heading>}
     </Page>
