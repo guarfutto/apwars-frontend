@@ -7,13 +7,14 @@ import useI18n from 'hooks/useI18n'
 import { getFullDisplayBalance } from 'utils/formatBalance'
 
 interface WithdrawModalProps {
+  isBurnRate: boolean,
   max: BigNumber
   onConfirm: (amount: string) => void
   onDismiss?: () => void
   tokenName?: string
 }
 
-const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max, tokenName = '' }) => {
+const WithdrawModal: React.FC<WithdrawModalProps> = ({ isBurnRate, onConfirm, onDismiss, max, tokenName = '' }) => {
   const [val, setVal] = useState('')
   const [pendingTx, setPendingTx] = useState(false)
   const TranslateString = useI18n()
@@ -37,6 +38,7 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
       <Heading color="red">WARNING: If you unstake you will stop receiving rewards!</Heading>
       <Text>If you have any questions feel free to ask!</Text>
       <TokenInput
+        isBurnRate={isBurnRate}
         onSelectMax={handleSelectMax}
         onChange={handleChange}
         value={val}

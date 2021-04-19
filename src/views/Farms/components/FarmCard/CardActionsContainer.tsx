@@ -30,6 +30,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }
   const [requestedApproval, setRequestedApproval] = useState(false)
   const {
     pid,
+    tier,
     rewardTip,
     internalPID,
     lpAddresses,
@@ -66,6 +67,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }
   const renderApprovalOrStakeButton = () => {
     return isApproved ? (
       <StakeAction
+        isBurnRate={tier > 0}
         stakedBalance={stakedBalance}
         tokenBalance={tokenBalance}
         tokenName={lpName}
