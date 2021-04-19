@@ -49,8 +49,6 @@ export const useBurnedBalance = (tokenAddress: string) => {
   const [balance, setBalance] = useState(new BigNumber(0))
   const { slowRefresh } = useRefresh()
 
-
-  
   useEffect(() => {
     const fetchBalance = async () => {
       try {
@@ -58,7 +56,7 @@ export const useBurnedBalance = (tokenAddress: string) => {
         const bal = await burnManagerContract.methods.getBurnedAmount(getCakeAddress()).call()
         setBalance(new BigNumber(bal))
       } catch (e) {
-        console.log(e);
+        console.log(e)
       }
     }
 
