@@ -43,7 +43,7 @@ const TokenInput: React.FC<TokenInputProps> = ({ isBurnRate, max, symbol, onChan
             {symbol}
           </StyledMaxText>
           <StyledWarning>
-            {isBurnRate ? `When you deposit in this pool, ${new BigNumber(value || 0).times(depositFeeBP / 10000).toFixed(2)} wGOLD of your precious pocket will be burned (destroyed) to build troops!` : null}
+            {isBurnRate ? `When you deposit in this pool, ${new BigNumber(value || 0).times(depositFeeBP / 10000).toFixed(2)} wGOLD from your precious pocket will be burned (destroyed) to build troops!` : null}
           </StyledWarning>
         </div>
       ) : null}
