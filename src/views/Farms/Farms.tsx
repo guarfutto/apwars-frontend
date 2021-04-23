@@ -81,7 +81,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           .div(new BigNumber(10).pow(18))
         const tokenRewardPerYear = tokenRewardPerBlock.times(BLOCKS_PER_YEAR)
 
-        let apy = tokenPrice.times(tokenRewardPerYear);
+        let apy = tokenPrice.times(tokenRewardPerYear)
 
         let totalValue = new BigNumber(farm.lpTotalInQuoteToken || 0)
 
@@ -112,41 +112,45 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   )
 
   function showCards() {
-    return <div>
-      <Divider />
-      <FlexLayout>
-        <Route exact path={`${path}`}>
-          {stakedOnly ? farmsList(stakedOnlyFarms, false) : farmsList(activeFarms, false)}
-        </Route>
-        <Route exact path={`${path}/history`}>
-          {farmsList(inactiveFarms, true)}
-        </Route>
-        <Route exact path={`${path}/team/1`}>
-          {stakedOnly ? farmsList(stakedHumansFarms, false) : farmsList(humansFarms, false)}
-        </Route>
-        <Route exact path={`${path}/team/2`}>
-          {stakedOnly ? farmsList(stakedOrcsFarms, false) : farmsList(orcsFarms, false)}
-        </Route>
-        <Route exact path={`${path}/team/1/history`}>
-          {farmsList(humansInactiveFarms, false)}
-        </Route>
-        <Route exact path={`${path}/team/2/history`}>
-          {farmsList(orcsInactiveFarms, false)}
-        </Route>
-      </FlexLayout>
-      {isActive && tierId === '0' && <Image src="/images/goldchest.png" alt="illustration" width={1352} height={587} responsive />}
-      {!isActive && tierId === '0' && <Image src="/images/goldchest_close.png" alt="illustration" width={1352} height={587} responsive />}
-    </div>
+    return (
+      <div>
+        <Divider />
+        <FlexLayout>
+          <Route exact path={`${path}`}>
+            {stakedOnly ? farmsList(stakedOnlyFarms, false) : farmsList(activeFarms, false)}
+          </Route>
+          <Route exact path={`${path}/history`}>
+            {farmsList(inactiveFarms, true)}
+          </Route>
+          <Route exact path={`${path}/team/1`}>
+            {stakedOnly ? farmsList(stakedHumansFarms, false) : farmsList(humansFarms, false)}
+          </Route>
+          <Route exact path={`${path}/team/2`}>
+            {stakedOnly ? farmsList(stakedOrcsFarms, false) : farmsList(orcsFarms, false)}
+          </Route>
+          <Route exact path={`${path}/team/1/history`}>
+            {farmsList(humansInactiveFarms, false)}
+          </Route>
+          <Route exact path={`${path}/team/2/history`}>
+            {farmsList(orcsInactiveFarms, false)}
+          </Route>
+        </FlexLayout>
+        {isActive && tierId === '0' && (
+          <Image src="/images/goldchest.png" alt="illustration" width={1352} height={587} responsive />
+        )}
+        {!isActive && tierId === '0' && (
+          <Image src="/images/goldchest_close.png" alt="illustration" width={1352} height={587} responsive />
+        )}
+      </div>
+    )
   }
 
   function showContent() {
     switch (tierId) {
-      case '2':
-        return <Image src="/images/apwars/armory.png" alt="illustration" width={1352} height={587} responsive />
       case '3':
         return <Image src="/images/apwars/arcane.png" alt="illustration" width={1352} height={587} responsive />
       default:
-        return showCards();
+        return showCards()
     }
   }
 
@@ -155,19 +159,30 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
         {TranslateString(10002, 'Stake tokens and LP tokens to earn war tokens')}
       </Heading>
-      {tierId === '0' &&
+      {tierId === '0' && (
         <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
-        {TranslateString(10000, 'Deposit Fee will be used to buyback wGOLD')}
-        </Heading>}
-      {tierId === '1' && <Image src="/images/apwars/barracks.png" alt="illustration" width={1352} height={587} responsive />}
+          {TranslateString(10000, 'Deposit Fee will be used to buyback wGOLD')}
+        </Heading>
+      )}
+      {tierId === '1' && (
+        <Image src="/images/apwars/barracks.png" alt="illustration" width={1352} height={587} responsive />
+      )}
+      {tierId === '2' && (
+        <Image src="/images/apwars/armory.png" alt="illustration" width={1352} height={587} responsive />
+      )}
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
-      {tierId !== '0' &&
+      {tierId !== '0' && (
         <Heading as="h2" color="red" mb="50px" style={{ textAlign: 'center' }}>
-        {TranslateString(10000, 'Burning Rate is the percentage of wGOLD burned (destroyed) to build troops!')}
-        </Heading>}
-      
+          {TranslateString(10000, 'Burning Rate is the percentage of wGOLD burned (destroyed) to build troops!')}
+        </Heading>
+      )}
+
       {showContent()}
-      {parseInt(tierId) > 1 && <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>Coming Soon</Heading>}
+      {parseInt(tierId) > 2 && (
+        <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
+          Coming Soon
+        </Heading>
+      )}
     </Page>
   )
 }

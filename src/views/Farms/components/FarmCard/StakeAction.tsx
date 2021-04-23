@@ -10,7 +10,7 @@ import DepositModal from '../DepositModal'
 import WithdrawModal from '../WithdrawModal'
 
 interface FarmCardActionsProps {
-  isBurnRate: boolean,
+  isBurnRate: boolean
   stakedBalance?: BigNumber
   tokenBalance?: BigNumber
   tokenName?: string
@@ -43,7 +43,13 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
   const displayBalance = rawStakedBalance.toLocaleString()
 
   const [onPresentDeposit] = useModal(
-    <DepositModal isBurnRate={isBurnRate} max={tokenBalance} onConfirm={onStake} tokenName={tokenName} depositFeeBP={depositFeeBP} />,
+    <DepositModal
+      isBurnRate={isBurnRate}
+      max={tokenBalance}
+      onConfirm={onStake}
+      tokenName={tokenName}
+      depositFeeBP={depositFeeBP}
+    />,
   )
   const [onPresentWithdraw] = useModal(
     <WithdrawModal isBurnRate={isBurnRate} max={stakedBalance} onConfirm={onUnstake} tokenName={tokenName} />,

@@ -8,7 +8,7 @@ import useI18n from '../../../hooks/useI18n'
 import { getFullDisplayBalance } from '../../../utils/formatBalance'
 
 interface DepositModalProps {
-  isBurnRate: boolean,
+  isBurnRate: boolean
   max: BigNumber
   onConfirm: (amount: string) => void
   onDismiss?: () => void
@@ -37,7 +37,7 @@ const DepositModal: React.FC<DepositModalProps> = ({ isBurnRate, max, onConfirm,
   return (
     <Modal title={`${TranslateString(316, 'Deposit')} ${tokenName} Tokens`} onDismiss={onDismiss}>
       asd
-      {isBurnRate ? 'yes':'no'}
+      {isBurnRate ? 'yes' : 'no'}
       <TokenInput
         isBurnRate={isBurnRate}
         value={val}
@@ -60,7 +60,7 @@ const DepositModal: React.FC<DepositModalProps> = ({ isBurnRate, max, onConfirm,
             onDismiss()
           }}
         >
-          {pendingTx ? TranslateString(488, 'Pending Confirmation') : (isBurnRate ? 'Deposit and burn!' : 'Confirm')}
+          {pendingTx ? TranslateString(488, 'Pending Confirmation') : isBurnRate ? 'Deposit and burn!' : 'Confirm'}
         </Button>
       </ModalActions>
     </Modal>

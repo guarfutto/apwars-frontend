@@ -6,14 +6,22 @@ import useI18n from '../../hooks/useI18n'
 import Input, { InputProps } from '../Input'
 
 interface TokenInputProps extends InputProps {
-  isBurnRate: boolean,
+  isBurnRate: boolean
   max: number | string
   symbol: string
   onSelectMax?: () => void
   depositFeeBP?: number
 }
 
-const TokenInput: React.FC<TokenInputProps> = ({ isBurnRate, max, symbol, onChange, onSelectMax, value, depositFeeBP = 0 }) => {
+const TokenInput: React.FC<TokenInputProps> = ({
+  isBurnRate,
+  max,
+  symbol,
+  onChange,
+  onSelectMax,
+  value,
+  depositFeeBP = 0,
+}) => {
   const TranslateString = useI18n()
   return (
     <StyledTokenInput>
@@ -39,11 +47,15 @@ const TokenInput: React.FC<TokenInputProps> = ({ isBurnRate, max, symbol, onChan
       {depositFeeBP > 0 ? (
         <div>
           <StyledMaxText>
-            {isBurnRate ? 'Burning Fee' : 'Deposit Fee'}: {new BigNumber(value || 0).times(depositFeeBP / 10000).toString()}{' '}
-            {symbol}
+            {isBurnRate ? 'Burning Fee' : 'Deposit Fee'}:{' '}
+            {new BigNumber(value || 0).times(depositFeeBP / 10000).toString()} {symbol}
           </StyledMaxText>
           <StyledWarning>
-            {isBurnRate ? `When you deposit in this pool, ${new BigNumber(value || 0).times(depositFeeBP / 10000).toFixed(2)} wGOLD from your precious pocket will be burned (destroyed) to build troops!` : null}
+            {isBurnRate
+              ? `When you deposit in this pool, ${new BigNumber(value || 0)
+                  .times(depositFeeBP / 10000)
+                  .toFixed(2)} wGOLD from your precious pocket will be burned (destroyed) to build troops!`
+              : null}
           </StyledWarning>
         </div>
       ) : null}

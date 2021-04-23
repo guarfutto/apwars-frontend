@@ -8,7 +8,7 @@ import useI18n from 'hooks/useI18n'
 import { getFullDisplayBalance } from 'utils/formatBalance'
 
 interface DepositModalProps {
-  isBurnRate: boolean,
+  isBurnRate: boolean
   max: BigNumber
   onConfirm: (amount: string) => void
   onDismiss?: () => void
@@ -16,7 +16,14 @@ interface DepositModalProps {
   depositFeeBP?: number
 }
 
-const DepositModal: React.FC<DepositModalProps> = ({ isBurnRate, max, onConfirm, onDismiss, tokenName = '', depositFeeBP = 0 }) => {
+const DepositModal: React.FC<DepositModalProps> = ({
+  isBurnRate,
+  max,
+  onConfirm,
+  onDismiss,
+  tokenName = '',
+  depositFeeBP = 0,
+}) => {
   const [val, setVal] = useState('')
   const [pendingTx, setPendingTx] = useState(false)
   const TranslateString = useI18n()
@@ -51,7 +58,7 @@ const DepositModal: React.FC<DepositModalProps> = ({ isBurnRate, max, onConfirm,
           {TranslateString(462, 'Cancel')}
         </Button>
         <Button
-          style={isBurnRate ? {background: 'red'} : null}
+          style={isBurnRate ? { background: 'red' } : null}
           disabled={pendingTx}
           onClick={async () => {
             setPendingTx(true)
