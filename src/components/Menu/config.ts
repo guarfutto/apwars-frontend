@@ -70,10 +70,10 @@ const config: MenuEntry[] = [
     label: 'Info',
     icon: 'InfoIcon',
     items: [
-      {
-        label: 'PancakeSwap',
-        href: `https://pancakeswap.info/token/${contracts.cake[56]}`,
-      },
+      // {
+      //   label: 'PancakeSwap',
+      //   href: `https://pancakeswap.info/token/${contracts.cake[56]}`,
+      // },
       // {
       //   label: 'CoinGecko',
       //   href: 'https://www.coingecko.com/en/coins/apwars',
@@ -84,7 +84,7 @@ const config: MenuEntry[] = [
       // },
       {
         label: 'AstroTools',
-        href: `https://app.astrotools.io/pancake-pair-explorer/${contracts.cake[56]}`,
+        href: `https://app.astrotools.io/pancake-pair-explorer/0xab6Ddad53513f9F0b57778A2ebf8aA81FBaCc8c9`,
       },
     ],
   },
