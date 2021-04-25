@@ -62,6 +62,7 @@ const fetchFarms = async (account: string) => {
       let tokenAmount
       let lpTotalInQuoteToken
       let tokenPriceVsQuote
+      
       if (farmConfig.isTokenOnly) {
         tokenAmount = new BigNumber(lpTokenBalanceFarmManager).div(new BigNumber(10).pow(tokenDecimals))
         if (farmConfig.tokenSymbol === QuoteToken.BUSD && farmConfig.quoteTokenSymbol === QuoteToken.BUSD) {
@@ -135,15 +136,6 @@ const fetchFarms = async (account: string) => {
 
       const allocPoint = new BigNumber(info.allocPoint._hex)
       const poolWeight = allocPoint.div(new BigNumber(totalAllocPoint))
-
-      if (farmConfig.pid === 9) {
-        console.log({
-          pid: farmConfig.pid,
-          allocPoint: allocPoint.toString(),
-          poolWeight: poolWeight.toString(),
-          totalAllocPoint: totalAllocPoint.toString(),
-        })
-      }
 
       return {
         ...farmConfig,

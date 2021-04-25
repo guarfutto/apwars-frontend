@@ -495,7 +495,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'wWARRIOR',
     lpAddresses: {
       97: '',
-      56: '0xab6Ddad53513f9F0b57778A2ebf8aA81FBaCc8c9',
+      56: '0x6CABE6C94DC8BC63F8b71BBA7B2ed3381B1fe6e9',
     },
     tokenSymbol: 'wARMORED-WARRIOR',
     tokenAddresses: {
@@ -503,10 +503,9 @@ const farms: FarmConfig[] = [
       56: '0x54f653f539a78d3db0e0d3b166cf32c4f6cc5fb6',
     },
     quoteTokenSymbol: QuoteToken.wGOLD,
-    quoteTokenAdresses: contracts.busd,
+    quoteTokenAdresses: contracts.wGOLD,
     icon: 'warmored-warrior-wwarrior',
   },
-
 
   {
     isTokenOnly: true,
@@ -544,7 +543,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'wARCHER',
     lpAddresses: {
       97: '',
-      56: '0xab6Ddad53513f9F0b57778A2ebf8aA81FBaCc8c9',
+      56: '0x764A521590ebd2686cC629E47f3464E8fD53b0F0',
     },
     tokenSymbol: 'wCROSSBOW-MAN',
     tokenAddresses: {
@@ -552,7 +551,7 @@ const farms: FarmConfig[] = [
       56: '0xAA2E03E7838148ce9FAd6Ce4C00275D89127A03e',
     },
     quoteTokenSymbol: QuoteToken.wGOLD,
-    quoteTokenAdresses: contracts.busd,
+    quoteTokenAdresses: contracts.wGOLD,
     icon: 'wcrossbow-man-warcher',
   },
 
@@ -592,7 +591,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'wGRUNT',
     lpAddresses: {
       97: '',
-      56: '0xab6Ddad53513f9F0b57778A2ebf8aA81FBaCc8c9',
+      56: '0x8C58f3aEe4924D0Ab0a8e0Ee680a6611296573FF',
     },
     tokenSymbol: 'wARMORED-GRUNT',
     tokenAddresses: {
@@ -600,7 +599,7 @@ const farms: FarmConfig[] = [
       56: '0xd7544Fe7668f3dfb7AD21F9E02D7A51e116b6D75',
     },
     quoteTokenSymbol: QuoteToken.wGOLD,
-    quoteTokenAdresses: contracts.busd,
+    quoteTokenAdresses: contracts.wGOLD,
     icon: 'warmored-grunt-wgrunt',
   },
 
@@ -640,7 +639,7 @@ const farms: FarmConfig[] = [
     lpSymbol: 'wORC-ARCHER',
     lpAddresses: {
       97: '',
-      56: '0xab6Ddad53513f9F0b57778A2ebf8aA81FBaCc8c9',
+      56: '0x9e15154b80a68191E2D5C4B220a24bd99a422DeE',
     },
     tokenSymbol: 'wPIKE-ORC',
     tokenAddresses: {
@@ -648,7 +647,7 @@ const farms: FarmConfig[] = [
       56: '0x934e11a44b2e817fe9bd6f337ef21bd35e46080e',
     },
     quoteTokenSymbol: QuoteToken.wGOLD,
-    quoteTokenAdresses: contracts.busd,
+    quoteTokenAdresses: contracts.wGOLD,
     icon: 'wpike-orc-worc-archer',
   },
 ]
