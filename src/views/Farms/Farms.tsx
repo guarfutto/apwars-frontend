@@ -173,7 +173,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       {tierId !== '0' && (
         <Heading as="h2" color="red" mb="50px" style={{ textAlign: 'center' }}>
-          {TranslateString(10000, 'Burning Rate is the percentage of wGOLD burned (destroyed) to build troops!')}
+          Burning Rate is the percentage of wGOLD/wUNIT burned (destroyed) to build troops!
         </Heading>
       )}
 

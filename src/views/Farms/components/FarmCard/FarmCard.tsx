@@ -99,7 +99,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, tokenPrice, bnbPrice
   // We assume the token name is coin pair + lp e.g. CAKE-BNB LP, LINK-BNB LP,
   // NAR-CAKE LP. The images should be cake-bnb.svg, link-bnb.svg, nar-cake.svg
   // const farmImage = farm.lpSymbol.split(' ')[0].toLocaleLowerCase()
-  let farmImage = `${farm.tokenSymbol.toLowerCase()}-${farm.quoteTokenSymbol.toLowerCase()}`
+  let farmImage = farm.icon || `${farm.tokenSymbol.toLowerCase()}-${farm.quoteTokenSymbol.toLowerCase()}`
   farmImage = farmImage.replace(/[:]/g, '')
 
   const totalValue: BigNumber = useMemo(() => {
