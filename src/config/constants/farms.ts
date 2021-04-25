@@ -484,6 +484,32 @@ const farms: FarmConfig[] = [
   },
   {
     isTokenOnly: true,
+    pid: 25,
+    internalPID: 1,
+    farmManager: '0xc882036156CdCEcdF4F392859B376D5f2FF8cD33',
+    farmManagerVersion: 'v2',
+    rewardTip: 'wARMORED-WARRIOR',
+    team: 1,
+    tier: 2,
+    risk: 3,
+    lpSymbol: 'wWARRIOR',
+    lpAddresses: {
+      97: '',
+      56: '0xab6Ddad53513f9F0b57778A2ebf8aA81FBaCc8c9',
+    },
+    tokenSymbol: 'wARMORED-WARRIOR',
+    tokenAddresses: {
+      97: '',
+      56: '0x54f653f539a78d3db0e0d3b166cf32c4f6cc5fb6',
+    },
+    quoteTokenSymbol: QuoteToken.wGOLD,
+    quoteTokenAdresses: contracts.busd,
+    icon: 'warmored-warrior-wwarrior',
+  },
+
+
+  {
+    isTokenOnly: true,
     pid: 18,
     internalPID: 0,
     farmManager: '0x724ad37bDe593672Ef508ba7eB227EAccf4b370F',
@@ -505,6 +531,31 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.wGOLD,
     quoteTokenAdresses: contracts.busd,
   },
+  {
+    isTokenOnly: true,
+    pid: 26,
+    internalPID: 1,
+    farmManager: '0x724ad37bDe593672Ef508ba7eB227EAccf4b370F',
+    farmManagerVersion: 'v2',
+    rewardTip: 'wCROSSBOW-MAN',
+    team: 1,
+    tier: 2,
+    risk: 3,
+    lpSymbol: 'wARCHER',
+    lpAddresses: {
+      97: '',
+      56: '0xab6Ddad53513f9F0b57778A2ebf8aA81FBaCc8c9',
+    },
+    tokenSymbol: 'wCROSSBOW-MAN',
+    tokenAddresses: {
+      97: '',
+      56: '0xAA2E03E7838148ce9FAd6Ce4C00275D89127A03e',
+    },
+    quoteTokenSymbol: QuoteToken.wGOLD,
+    quoteTokenAdresses: contracts.busd,
+    icon: 'wcrossbow-man-warcher',
+  },
+
   {
     isTokenOnly: true,
     pid: 19,
@@ -530,6 +581,31 @@ const farms: FarmConfig[] = [
   },
   {
     isTokenOnly: true,
+    pid: 27,
+    internalPID: 1,
+    farmManager: '0xa7C4Df300eA5B16E3C02E36A53e9456b0074A17d',
+    farmManagerVersion: 'v2',
+    rewardTip: 'wARMORED-GRUNT',
+    team: 1,
+    tier: 2,
+    risk: 3,
+    lpSymbol: 'wGRUNT',
+    lpAddresses: {
+      97: '',
+      56: '0xab6Ddad53513f9F0b57778A2ebf8aA81FBaCc8c9',
+    },
+    tokenSymbol: 'wARMORED-GRUNT',
+    tokenAddresses: {
+      97: '',
+      56: '0xd7544Fe7668f3dfb7AD21F9E02D7A51e116b6D75',
+    },
+    quoteTokenSymbol: QuoteToken.wGOLD,
+    quoteTokenAdresses: contracts.busd,
+    icon: 'warmored-grunt-wgrunt',
+  },
+
+  {
+    isTokenOnly: true,
     pid: 20,
     internalPID: 0,
     farmManager: '0x08bBA42794b1511E24831dc26877f81f5fdc20b3',
@@ -550,6 +626,30 @@ const farms: FarmConfig[] = [
     },
     quoteTokenSymbol: QuoteToken.wGOLD,
     quoteTokenAdresses: contracts.busd,
+  },
+  {
+    isTokenOnly: true,
+    pid: 28,
+    internalPID: 1,
+    farmManager: '0x08bBA42794b1511E24831dc26877f81f5fdc20b3',
+    farmManagerVersion: 'v2',
+    rewardTip: 'wPIKE-ORC',
+    team: 1,
+    tier: 2,
+    risk: 3,
+    lpSymbol: 'wORC-ARCHER',
+    lpAddresses: {
+      97: '',
+      56: '0xab6Ddad53513f9F0b57778A2ebf8aA81FBaCc8c9',
+    },
+    tokenSymbol: 'wPIKE-ORC',
+    tokenAddresses: {
+      97: '',
+      56: '0x934e11a44b2e817fe9bd6f337ef21bd35e46080e',
+    },
+    quoteTokenSymbol: QuoteToken.wGOLD,
+    quoteTokenAdresses: contracts.busd,
+    icon: 'wpike-orc-worc-archer',
   },
 ]
 
