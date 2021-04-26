@@ -146,12 +146,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   }
 
   function showContent() {
-    switch (tierId) {
-      case '3':
-        return <Image src="/images/apwars/arcane.png" alt="illustration" width={1352} height={587} responsive />
-      default:
-        return showCards()
-    }
+    return showCards()
   }
 
   return (
@@ -170,6 +165,9 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       {tierId === '2' && (
         <Image src="/images/apwars/armory.png" alt="illustration" width={1352} height={587} responsive />
       )}
+      {tierId === '3' && (
+        <Image src="/images/apwars/arcane.png" alt="illustration" width={1352} height={587} responsive />
+      )}
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       {tierId !== '0' && (
         <Heading as="h2" color="red" mb="50px" style={{ textAlign: 'center' }}>
@@ -178,11 +176,11 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       )}
 
       {showContent()}
-      {parseInt(tierId) > 2 && (
+      {/* {parseInt(tierId) > 2 && (
         <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
           Coming Soon
         </Heading>
-      )}
+      )} */}
     </Page>
   )
 }

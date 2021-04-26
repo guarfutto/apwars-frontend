@@ -36,7 +36,7 @@ export default {
     97: '',
   },
   wARMOREDGRUNT: {
-    56: '',
+    56: '0x56c09E954690d80C5728194f7eAf473737Dc2180',
     97: '',
   },
   wCROSSBOWMAN: {
@@ -44,7 +44,7 @@ export default {
     97: '',
   },
   wARMOREDWARRIOR: {
-    56: '',
+    56: '0xd67761dF2b76eE251d48816691f5ff7728d94DAa',
     97: '',
   },
   wPIKEORC: {
