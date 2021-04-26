@@ -121,7 +121,7 @@ const fetchFarms = async (account: string) => {
             {
               address: info.burnManager,
               name: 'getBurnRate',
-              params: [farmConfig.farmManager, farmConfig.tokenAddresses[CHAIN_ID], account, farmConfig.internalPID],
+              params: [farmConfig.farmManager, farmConfig.isTokenOnly ? farmConfig.tokenAddresses[CHAIN_ID] : farmConfig.lpAddresses[CHAIN_ID], account, farmConfig.internalPID],
             },
           ])
 
