@@ -12,6 +12,11 @@ import DetailsSection from './DetailsSection'
 import CardHeading from './CardHeading'
 import CardActionsContainer from './CardActionsContainer'
 import ApyButton from './ApyButton'
+import {
+  useTokenwARMOREDGRUNTwGOLDPrice,
+  useTokenwARMOREDWARRIORwGOLDPrice,
+  useTokenBUSDPrice,
+} from '../../../../state/hooks'
 
 export interface FarmWithStakedValue extends Farm {
   apy?: BigNumber
@@ -101,6 +106,9 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, tokenPrice, bnbPrice
   // const farmImage = farm.lpSymbol.split(' ')[0].toLocaleLowerCase()
   let farmImage = farm.icon || `${farm.tokenSymbol.toLowerCase()}-${farm.quoteTokenSymbol.toLowerCase()}`
   farmImage = farmImage.replace(/[:]/g, '')
+  const pricewGOLD = useTokenBUSDPrice()
+  const pricewARMOREDGRUNT = useTokenwARMOREDGRUNTwGOLDPrice()
+  const pricewARMOREDWARRIOR = useTokenwARMOREDWARRIORwGOLDPrice()
 
   const totalValue: BigNumber = useMemo(() => {
     if (!farm.lpTotalInQuoteToken) {
@@ -112,8 +120,22 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, tokenPrice, bnbPrice
     if (farm.quoteTokenSymbol === QuoteToken.wGOLD) {
       return tokenPrice.times(farm.lpTotalInQuoteToken)
     }
+    if (farm.quoteTokenSymbol === QuoteToken.wARMOREDGRUNT) {
+      return pricewGOLD.times(pricewARMOREDGRUNT).times(farm.lpTotalInQuoteToken)
+    }
+    if (farm.quoteTokenSymbol === QuoteToken.wARMOREDWARRIOR) {
+      return pricewGOLD.times(pricewARMOREDWARRIOR).times(farm.lpTotalInQuoteToken)
+    }
     return farm.lpTotalInQuoteToken
-  }, [bnbPrice, tokenPrice, farm.lpTotalInQuoteToken, farm.quoteTokenSymbol])
+  }, [
+    bnbPrice,
+    tokenPrice,
+    farm.lpTotalInQuoteToken,
+    farm.quoteTokenSymbol,
+    pricewARMOREDGRUNT,
+    pricewGOLD,
+    pricewARMOREDWARRIOR,
+  ])
 
   const totalValueFormated = totalValue
     ? `$${Number(totalValue).toLocaleString(undefined, { maximumFractionDigits: 5 })}`

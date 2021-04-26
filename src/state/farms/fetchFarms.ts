@@ -62,7 +62,7 @@ const fetchFarms = async (account: string) => {
       let tokenAmount
       let lpTotalInQuoteToken
       let tokenPriceVsQuote
-      
+
       if (farmConfig.isTokenOnly) {
         tokenAmount = new BigNumber(lpTokenBalanceFarmManager).div(new BigNumber(10).pow(tokenDecimals))
         if (farmConfig.tokenSymbol === QuoteToken.BUSD && farmConfig.quoteTokenSymbol === QuoteToken.BUSD) {

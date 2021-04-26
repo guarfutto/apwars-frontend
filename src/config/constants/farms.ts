@@ -650,6 +650,52 @@ const farms: FarmConfig[] = [
     quoteTokenAdresses: contracts.wGOLD,
     icon: 'wpike-orc-worc-archer',
   },
+
+  // TIER:3
+  {
+    pid: 29,
+    internalPID: 0,
+    farmManager: '0xBbA48341Dc7BA19E6262c92b8344c8aa042A71fb',
+    farmManagerVersion: 'v2',
+    rewardTip: 'wWIZARD',
+    team: 1,
+    tier: 3,
+    risk: 3,
+    lpSymbol: 'wCROSSBOW-MAN - wARMORED-WARRIOR LP',
+    lpAddresses: {
+      97: '',
+      56: '0x2DA56FBA7D1c881092675653Bf9da67eD1825379',
+    },
+    tokenSymbol: 'wWIZARD',
+    tokenAddresses: {
+      97: '',
+      56: '0x1225C7999483544c7859fE5A23c9Be70d14d5378',
+    },
+    quoteTokenSymbol: QuoteToken.wARMOREDWARRIOR,
+    quoteTokenAdresses: contracts.wARMOREDWARRIOR,
+  },
+  {
+    pid: 30,
+    internalPID: 0,
+    farmManager: '0xB42FD0B3ED00e4320197943a26d491609883302d',
+    farmManagerVersion: 'v2',
+    rewardTip: 'wSHAMAN',
+    team: 2,
+    tier: 3,
+    risk: 3,
+    lpSymbol: 'wPIKE-ORC-wARMORED-GRUNT LP',
+    lpAddresses: {
+      97: '',
+      56: '0x045206D14B9dcC946131419BdF28477936899e17',
+    },
+    tokenSymbol: 'wSHAMAN',
+    tokenAddresses: {
+      97: '',
+      56: '0x10eAAC888b70aBE542a50b787ABe7f94b8989CB7',
+    },
+    quoteTokenSymbol: QuoteToken.wARMOREDGRUNT,
+    quoteTokenAdresses: contracts.wARMOREDGRUNT,
+  },
 ]
 
 export default farms
