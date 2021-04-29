@@ -160,12 +160,12 @@ const farms: FarmConfig[] = [
     team: 0,
     tier: 0,
     risk: 5,
-    lpSymbol: 'wCROSSBOW-MAN - wGOLD LP',
+    lpSymbol: 'wCROSSBOWMAN - wGOLD LP',
     lpAddresses: {
       97: '',
       56: '0xEd5D84185d0BB1d9fEAF7b59F38220Fc26F4FDD0',
     },
-    tokenSymbol: 'wCROSSBOW-MAN',
+    tokenSymbol: 'wCROSSBOWMAN',
     tokenAddresses: {
       97: '',
       56: '0xA0ecF9c7114eFFB43440B95D54e09A2a67331236',
@@ -513,7 +513,7 @@ const farms: FarmConfig[] = [
     internalPID: 0,
     farmManager: '0x724ad37bDe593672Ef508ba7eB227EAccf4b370F',
     farmManagerVersion: 'v2',
-    rewardTip: 'wCROSSBOW-MAN',
+    rewardTip: 'wCROSSBOWMAN',
     team: 1,
     tier: 2,
     risk: 3,
@@ -522,7 +522,7 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0xab6Ddad53513f9F0b57778A2ebf8aA81FBaCc8c9',
     },
-    tokenSymbol: 'wCROSSBOW-MAN',
+    tokenSymbol: 'wCROSSBOWMAN',
     tokenAddresses: {
       97: '',
       56: '0x7ab6eedd9443e0e98e5ea93667ca5b250b8dda51',
@@ -536,7 +536,7 @@ const farms: FarmConfig[] = [
     internalPID: 1,
     farmManager: '0x724ad37bDe593672Ef508ba7eB227EAccf4b370F',
     farmManagerVersion: 'v2',
-    rewardTip: 'wCROSSBOW-MAN',
+    rewardTip: 'wCROSSBOWMAN',
     team: 1,
     tier: 2,
     risk: 3,
@@ -545,14 +545,14 @@ const farms: FarmConfig[] = [
       97: '',
       56: '0x764A521590ebd2686cC629E47f3464E8fD53b0F0',
     },
-    tokenSymbol: 'wCROSSBOW-MAN',
+    tokenSymbol: 'wCROSSBOWMAN',
     tokenAddresses: {
       97: '',
       56: '0xAA2E03E7838148ce9FAd6Ce4C00275D89127A03e',
     },
     quoteTokenSymbol: QuoteToken.wGOLD,
     quoteTokenAdresses: contracts.wGOLD,
-    icon: 'wcrossbow-man-warcher',
+    icon: 'wcrossbowman-warcher',
   },
 
   {
@@ -661,7 +661,7 @@ const farms: FarmConfig[] = [
     team: 1,
     tier: 3,
     risk: 3,
-    lpSymbol: 'wCROSSBOW-MAN - wARMORED-WARRIOR LP',
+    lpSymbol: 'wCROSSBOWMAN - wARMORED-WARRIOR LP',
     lpAddresses: {
       97: '',
       56: '0x2DA56FBA7D1c881092675653Bf9da67eD1825379',
