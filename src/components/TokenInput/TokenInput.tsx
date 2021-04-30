@@ -23,6 +23,13 @@ const TokenInput: React.FC<TokenInputProps> = ({
   depositFeeBP = 0,
 }) => {
   const TranslateString = useI18n()
+  let symbolBurn = 'wGOLD'
+  if(symbol === 'WCROSSBOWMAN - WARMORED-WARRIOR LP') {
+    symbolBurn = 'LP-Token'
+  }
+  if(symbol === 'WPIKE-ORC-WARMORED-GRUNT LP') {
+    symbolBurn = 'LP-Token'
+  }
   return (
     <StyledTokenInput>
       <StyledMaxText>
@@ -54,7 +61,7 @@ const TokenInput: React.FC<TokenInputProps> = ({
             {isBurnRate
               ? `When you deposit in this pool, ${new BigNumber(value || 0)
                   .times(depositFeeBP / 10000)
-                  .toFixed(2)} wGOLD from your precious pocket will be burned (destroyed) to build troops!`
+                  .toFixed(2)} ${symbolBurn} from your precious pocket will be burned (destroyed) to build troops!`
               : null}
           </StyledWarning>
         </div>
