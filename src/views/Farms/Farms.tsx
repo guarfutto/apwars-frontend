@@ -169,9 +169,15 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         <Image src="/images/apwars/arcane.png" alt="illustration" width={1352} height={587} responsive />
       )}
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
-      {tierId !== '0' && (
+      {(tierId === '1' || tierId === '2') && (
         <Heading as="h2" color="red" mb="50px" style={{ textAlign: 'center' }}>
           Burning Rate is the percentage of wGOLD/wUNIT burned (destroyed) to build troops!
+        </Heading>
+      )}
+
+      {tierId === '3' && (
+        <Heading as="h2" color="red" mb="50px" style={{ textAlign: 'center' }}>
+          Burning Rate is the percentage of LP-Token burned (destroyed) to build troops!
         </Heading>
       )}
 
